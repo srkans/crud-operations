@@ -15,6 +15,24 @@ namespace Services
 
         public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
         {
+            //Validation:countryAddRequest can't be null
+            if(countryAddRequest == null)
+            {
+                throw new ArgumentNullException(nameof(countryAddRequest));
+            }
+
+            //Validation:countryName can't be null
+            if(countryAddRequest.CountryName == null)
+            {
+                throw new ArgumentException(nameof(countryAddRequest.CountryName));
+            }
+
+            //Validation:countryName duplicate not allowed
+            if(_countries.Where(temp=>temp.CountryName == countryAddRequest.CountryName).Count()>0)
+            {
+                throw new ArgumentException("Given country name already exist");
+            }
+
             //Convert object from CountryAddRequest to Country type--from DTO to DomainModel
             Country country = countryAddRequest.ToCountry();
 
