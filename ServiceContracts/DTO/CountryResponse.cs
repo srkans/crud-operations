@@ -25,6 +25,11 @@ namespace ServiceContracts.DTO
             return CountryID == countryToCompare.CountryID && CountryName == countryToCompare.CountryName;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
     }
  
 
