@@ -97,3 +97,10 @@ F:\Documents\xunit\CRUDTests\obj\Debug\net6.0\refint\CRUDTests.dll
 F:\Documents\xunit\CRUDTests\obj\Debug\net6.0\CRUDTests.pdb
 F:\Documents\xunit\CRUDTests\obj\Debug\net6.0\CRUDTests.genruntimeconfig.cache
 F:\Documents\xunit\CRUDTests\obj\Debug\net6.0\ref\CRUDTests.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Entities.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\ServiceContracts.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Services.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Entities.pdb
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\ServiceContracts.pdb
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Services.pdb

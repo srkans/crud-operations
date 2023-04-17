@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "EtYy1VUfo+HEZ8+3i+A4aZXNOqceDCWCXi0HeWs5MNY=",
+  "Source": "CRUDExample",
+  "BasePath": "_content/CRUDExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CRUDExample\\wwwroot",
+      "Source": "CRUDExample",
+      "ContentRoot": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\",
+      "BasePath": "_content/CRUDExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "CRUDExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\",
+      "BasePath": "_content/CRUDExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

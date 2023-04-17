@@ -1,0 +1,17 @@
+F:\Documents\xunit\Services\bin\Debug\net6.0\Services.deps.json
+F:\Documents\xunit\Services\bin\Debug\net6.0\Services.dll
+F:\Documents\xunit\Services\bin\Debug\net6.0\Services.pdb
+F:\Documents\xunit\Services\bin\Debug\net6.0\Entities.dll
+F:\Documents\xunit\Services\bin\Debug\net6.0\ServiceContracts.dll
+F:\Documents\xunit\Services\bin\Debug\net6.0\ServiceContracts.pdb
+F:\Documents\xunit\Services\bin\Debug\net6.0\Entities.pdb
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.dll
+F:\Documents\xunit\Services\obj\Debug\net6.0\refint\Services.dll
+F:\Documents\xunit\Services\obj\Debug\net6.0\Services.pdb
+F:\Documents\xunit\Services\obj\Debug\net6.0\ref\Services.dll

@@ -1825,6 +1825,19 @@
         "runtime": {
           "bin/placeholder/ServiceContracts.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ServiceContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -6131,6 +6144,11 @@
       "type": "project",
       "path": "../ServiceContracts/ServiceContracts.csproj",
       "msbuildProject": "../ServiceContracts/ServiceContracts.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6138,6 +6156,7 @@
       "Entities >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "ServiceContracts >= 1.0.0",
+      "Services >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -6175,6 +6194,9 @@
             },
             "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj"
+            },
+            "F:\\Documents\\xunit\\Services\\Services.csproj": {
+              "projectPath": "F:\\Documents\\xunit\\Services\\Services.csproj"
             }
           }
         }

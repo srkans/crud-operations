@@ -1,0 +1,15 @@
+F:\Documents\xunit\ServiceContracts\bin\Debug\net6.0\ServiceContracts.deps.json
+F:\Documents\xunit\ServiceContracts\bin\Debug\net6.0\ServiceContracts.dll
+F:\Documents\xunit\ServiceContracts\bin\Debug\net6.0\ServiceContracts.pdb
+F:\Documents\xunit\ServiceContracts\bin\Debug\net6.0\Entities.dll
+F:\Documents\xunit\ServiceContracts\bin\Debug\net6.0\Entities.pdb
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.AssemblyReference.cache
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfoInputs.cache
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfo.cs
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CoreCompileInputs.cache
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CopyComplete
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.dll
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\refint\ServiceContracts.dll
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ServiceContracts.pdb
+F:\Documents\xunit\ServiceContracts\obj\Debug\net6.0\ref\ServiceContracts.dll
