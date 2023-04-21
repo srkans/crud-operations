@@ -56,7 +56,7 @@ namespace CRUDTests
         public void AddPerson_ProperPersonObject_ReturnsPersonResponse()
         {
             //Arrange
-            PersonAddRequest? personAddRequest = new PersonAddRequest() { Name = "Serkan" };
+            PersonAddRequest? personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "aa@ss.com" };
 
             //Act
             PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);

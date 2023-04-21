@@ -4,6 +4,7 @@ using ServiceContracts.DTO;
 using ServiceContracts;
 using System.ComponentModel.DataAnnotations;
 using Services.Helpers;
+using System.Runtime.CompilerServices;
 
 namespace Services
 {
@@ -46,7 +47,7 @@ namespace Services
 
         public List<PersonResponse> GetAllPersons()
         {
-            throw new NotImplementedException();
+             return _persons.Select(temp => temp.ToPersonResponse()).ToList();
         }
 
         public PersonResponse? GetPersonByPersonID(Guid? personID)
