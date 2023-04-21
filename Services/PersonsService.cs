@@ -2,6 +2,8 @@
 using Entities;
 using ServiceContracts.DTO;
 using ServiceContracts;
+using System.ComponentModel.DataAnnotations;
+using Services.Helpers;
 
 namespace Services
 {
@@ -24,17 +26,9 @@ namespace Services
             return personResponse;
         }
         public PersonResponse AddPerson(PersonAddRequest? personAddRequest)
-        {      
-
-           if(personAddRequest == null)
-            {
-                throw new ArgumentNullException(nameof(personAddRequest));
-            }
-
-           if(personAddRequest.Name == null) //string.IsNullOrEmpty
-            {
-                throw new ArgumentException("Person name can't be blank");
-            }
+        {
+            //Model Validations
+            ValidationHelper.ModelValidation(personAddRequest);
 
             //convert personaddrequest to person type
 
