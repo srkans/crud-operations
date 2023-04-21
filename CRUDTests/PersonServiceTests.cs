@@ -9,10 +9,12 @@ namespace CRUDTests
     public class PersonServiceTests
     {
         private readonly IPersonsService _personsService;
+        private readonly ICountriesService _countriesService;
 
         public PersonServiceTests()
         {
             _personsService = new PersonsService();
+            _countriesService = new CountriesService();
         }
 
         #region AddPerson
@@ -64,6 +66,42 @@ namespace CRUDTests
             Assert.True(personResponseFromAdd.PersonID != Guid.Empty);
             Assert.Contains(personResponseFromAdd, personList);
 
+        }
+
+        #endregion
+
+        #region GetPersonByPersonID
+
+        //if we supply null as personID, it should return null as personresponse
+        [Fact]
+        public void GetPersonByPersonID_NullPersonID_ReturnsNullPersonResponse()
+        {
+            //Arrange
+            Guid? personID = null;
+
+            //Act
+            PersonResponse? personResponseFromGet = _personsService.GetPersonByPersonID(personID);
+
+            //Assert
+            Assert.Null(personResponseFromGet);
+        }
+
+        //if we supply proper personID
+        [Fact]
+        public void GetPersonByPersonID_ProperPersonID_ReturnsProperPersonResponse()
+        {
+            //Arrange
+            CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Canada" };
+            CountryResponse countryResponse = _countriesService.AddCountry(countryAddRequest);
+
+            //Act
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email="serkansacma@gmail.com", CountryID = countryResponse.CountryID};           
+            PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);
+
+            PersonResponse? personResponseFromGet = _personsService.GetPersonByPersonID(personResponseFromAdd.PersonID);
+
+            //Assert
+            Assert.Equal(personResponseFromAdd,personResponseFromGet);
         }
 
         #endregion
