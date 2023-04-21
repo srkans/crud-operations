@@ -307,6 +307,8 @@ namespace CRUDTests
                 personResponseListFromAdd.Add(_personsService.AddPerson(personAddRequest));
             }
 
+            personResponseListFromAdd = personResponseListFromAdd.OrderByDescending(temp => temp.Name).ToList();
+
             _testOutputHelper.WriteLine("Expected");
             //print personResponsesFrom Add
             foreach (PersonResponse personResponse in personResponseListFromAdd)
@@ -326,7 +328,7 @@ namespace CRUDTests
                 _testOutputHelper.WriteLine(personResponse.ToString());
             }
 
-            personResponseListFromAdd = personResponseListFromAdd.OrderByDescending(temp=> temp.Name).ToList();
+
 
             //Assert
             for(int i = 0;i < personResponseListFromAdd.Count;i++)
