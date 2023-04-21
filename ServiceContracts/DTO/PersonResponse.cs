@@ -46,6 +46,11 @@ namespace ServiceContracts.DTO
         {
             return base.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return $"Person ID: {PersonID}, Person Name: {Name}";
+        }
     }
 
 

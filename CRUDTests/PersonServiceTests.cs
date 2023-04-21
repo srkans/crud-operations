@@ -3,6 +3,7 @@ using ServiceContracts.DTO;
 using Entities;
 using System;
 using Services;
+using Xunit.Abstractions;
 
 namespace CRUDTests
 {
@@ -10,11 +11,13 @@ namespace CRUDTests
     {
         private readonly IPersonsService _personsService;
         private readonly ICountriesService _countriesService;
+        private readonly ITestOutputHelper _testOutputHelper;
 
-        public PersonServiceTests()
+        public PersonServiceTests(ITestOutputHelper testOutputHelper)
         {
             _personsService = new PersonsService();
             _countriesService = new CountriesService();
+            _testOutputHelper = testOutputHelper;
         }
 
         #region AddPerson
@@ -150,6 +153,20 @@ namespace CRUDTests
             foreach(PersonResponse personResponse in personResponsesFromAdd)
             {
                 Assert.Contains(personResponse, personResponsesFromGet);
+            }
+
+            _testOutputHelper.WriteLine("Expected");
+            //print personResponsesFrom Add
+            foreach(PersonResponse personResponse in personResponsesFromAdd)
+            {
+                _testOutputHelper.WriteLine(personResponse.ToString());
+            }
+
+            _testOutputHelper.WriteLine("Actual");
+            //print personResponsesFrom Get
+            foreach (PersonResponse personResponse in personResponsesFromGet)
+            {
+                _testOutputHelper.WriteLine(personResponse.ToString());
             }
         }
 
