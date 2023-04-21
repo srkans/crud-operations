@@ -252,7 +252,10 @@ namespace CRUDTests
             //print personResponsesFrom Add
             foreach (PersonResponse personResponse in personResponsesFromAdd)
             {
-                _testOutputHelper.WriteLine(personResponse.ToString());
+                if (personResponse.Name.Contains("erk", StringComparison.OrdinalIgnoreCase))
+                {
+                    _testOutputHelper.WriteLine(personResponse.ToString());
+                }
             }
 
             //Act
