@@ -5,10 +5,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ServiceContracts.DTO
 {
+    /// <summary>
+    /// Represents the DTO class that contains the person details to update
+    /// </summary>
     public class PersonUpdateRequest
     {
+        [Required(ErrorMessage = "Person ID can't be blank")]
+        public Guid PersonID { get; set; }
+
         [Required(ErrorMessage = "Person name can't be blank")]
         public string? Name { get; set; }
+
         [Required(ErrorMessage = "Email can't be blank")]
         [EmailAddress(ErrorMessage = "Email should be a valid email")]
         public string? Email { get; set; }
