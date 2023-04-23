@@ -28,10 +28,10 @@ namespace ServiceContracts.DTO
         /// <summary>
         /// Converts the current object of PersonUpdateRequest into a new object of Person type
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns Person object</returns>
         public Person ToPerson()
         {
-            return new Person() { Name = Name, Email = Email, DateOfBirth = DateOfBirth, Gender = Gender.ToString(), CountryID = CountryID, Address = Address, ReceiveNewsLetters = ReceiveNewsLetters };
+            return new Person() {PersonID =PersonID, Name = Name, Email = Email, DateOfBirth = DateOfBirth, Gender = Gender.ToString(), CountryID = CountryID, Address = Address, ReceiveNewsLetters = ReceiveNewsLetters };
         }
     }
 }
