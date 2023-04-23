@@ -419,5 +419,45 @@ namespace CRUDTests
         }
 
         #endregion
+
+        #region DeletePerson
+
+        //if we supply and valid PersonID, it should return true
+        [Fact]
+        public void DeletePerson_ValidPerson_ReturnsTrue()
+        {
+            CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Türkiye" };
+            CountryResponse countryResponseFromAdd = _countriesService.AddCountry(countryAddRequest);
+
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID };
+            PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);
+
+            //Act
+            bool isDeleted = _personsService.DeletePerson(personResponseFromAdd.PersonID);
+
+            //Assert
+            Assert.True(isDeleted);
+
+        }
+
+        //if we supply and invalid PersonID, it should return false
+        [Fact]
+        public void DeletePerson_InvalidPerson_ReturnsFalse()
+        {
+            CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Türkiye" };
+            CountryResponse countryResponseFromAdd = _countriesService.AddCountry(countryAddRequest);
+
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID };
+            PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);
+
+            //Act
+            bool isDeleted = _personsService.DeletePerson(Guid.NewGuid());
+
+            //Assert
+            Assert.False(isDeleted);
+
+        }
+
+        #endregion
     }
 }
