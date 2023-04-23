@@ -379,7 +379,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "UK" };
             CountryResponse countryResponseFromAdd = _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com" };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male };
             PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);
 
             PersonUpdateRequest? personUpdateRequest = personResponseFromAdd.ToPersonUpdateRequest();
@@ -401,7 +401,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "UK" };
             CountryResponse countryResponseFromAdd = _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com" };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male};
             PersonResponse personResponseFromAdd = _personsService.AddPerson(personAddRequest);
 
             PersonUpdateRequest? personUpdateRequest = personResponseFromAdd.ToPersonUpdateRequest();
