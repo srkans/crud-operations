@@ -25,3 +25,12 @@ F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\refint\CRUDExample.dll
 F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.pdb
 F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.genruntimeconfig.cache
 F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\ref\CRUDExample.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Entities.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\ServiceContracts.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Services.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Entities.pdb
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\ServiceContracts.pdb
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Services.pdb
+F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.RazorAssemblyInfo.cache
+F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.RazorAssemblyInfo.cs
+F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.csproj.CopyComplete
