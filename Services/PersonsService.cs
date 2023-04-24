@@ -14,10 +14,22 @@ namespace Services
         private readonly List<Person> _persons;
         private readonly ICountriesService _countriesService;
 
-        public PersonsService()
+        public PersonsService(bool initialize = true)
         {
             _persons = new List<Person>();
             _countriesService = new CountriesService();
+
+            if(initialize)
+            {
+                _persons.AddRange(new List<Person>() { 
+                    new Person() {PersonID = Guid.Parse("38BA5102-EB8C-4162-B564-F92316809E3D"),Name = "Serkan", Email = "amacgahey0@eepurl.com",DateOfBirth = DateTime.Parse("29/4/1996"), Gender ="Male" ,Address = "3175 Hollow Ridge Drive", ReceiveNewsLetters = false, CountryID = Guid.Parse("A5082F1A-8A91-480C-B709-E2824286F04F")},
+                    new Person() {PersonID = Guid.Parse("B8CAB606-47C3-44E4-8472-F419E2E2B4A6"), Name = "Betül", Email = "abullock1@samsung.com",DateOfBirth = DateTime.Parse("19/9/1997"), Gender ="Female" ,Address = "3175 Hollow Ridge Drive", ReceiveNewsLetters = true, CountryID = Guid.Parse("A5082F1A-8A91-480C-B709-E2824286F04F")},
+                    new Person() {PersonID = Guid.Parse("DFD08699-88C0-4C16-8C18-20BDE0672B02"), Name = "Beau", Email = "bavard5@merriam-webster.com",DateOfBirth = DateTime.Parse("17/5/1990"), Gender ="Male" ,Address = "00668 Hagan Terrace", ReceiveNewsLetters = true, CountryID = Guid.Parse("B76053EB-EEC4-4258-8147-A3C514C03BC2")},
+                    new Person() {PersonID = Guid.Parse("99294CDA-B9B0-45C6-931A-E88C5030931C"), Name = "Ayşe", Email = "yy@aa.com",DateOfBirth = DateTime.Parse("19/9/1997"), Gender ="Female" ,Address = "3135 Ridge Drive", ReceiveNewsLetters = false, CountryID = Guid.Parse("EF0BC4B1-EDF1-4598-8A5C-45EE61A74AF4")},
+                    new Person() {PersonID = Guid.Parse("098EC21F-C786-4D8D-96CB-57369D257A2B"), Name = "Geno", Email = "gsympson8@booking.com",DateOfBirth = DateTime.Parse("20/1/1998"), Gender ="Male" ,Address = "5 Bluejay Way", ReceiveNewsLetters = true, CountryID = Guid.Parse("60A0F453-D0DE-44F8-BCDA-53BA837E0148")},
+                    new Person() {PersonID = Guid.Parse("E6BBAD59-C227-45AF-AF9C-60D8AD345B2E"), Name = "Dorey", Email = "dlukes9@github.com",DateOfBirth = DateTime.Parse("13/4/1996"), Gender ="Male" ,Address = "59 Nancy Point", ReceiveNewsLetters = false, CountryID = Guid.Parse("3E3F9AC3-D1DE-4DF1-B1F0-F10A014AEC3D")}
+                });
+            }
         }
 
         private PersonResponse ConvertPersonToPersonResponse(Person person)
