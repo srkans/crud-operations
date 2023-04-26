@@ -30,7 +30,7 @@ namespace CRUDExample.Controllers
             };
 
 
-            List<PersonResponse> persons = _personsService.GetAllPersons();
+            List<PersonResponse> persons = _personsService.GetFilteredPersons(searchBy,searchString);
 
             return View(persons); //Views/Shared/Index.cshtml
         }
