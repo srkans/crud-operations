@@ -5,15 +5,15 @@
 }
 
 <form action="~/persons/index" method="get">
-<h1>Persons</h1>
+    <h1>Persons</h1>
 
-<div class="box flex">
-    <div class="flex-1">
-        <select class="form-input" name="searchBy">
-            @foreach(var field in ViewBag.SearchField)
-            {
-                    if(field.Key == ViewBag.CurrentSearchBy)
-                    {                                       
+    <div class="box flex">
+        <div class="flex-1">
+            <select class="form-input" name="searchBy">
+                @foreach (var field in ViewBag.SearchField)
+                {
+                    if (field.Key == ViewBag.CurrentSearchBy)
+                    {
                         <option value="@field.Key" selected="selected">@field.Value</option>
                     }
                     else
@@ -21,45 +21,64 @@
                         <option value="@field.Key">@field.Value</option>
                     }
                 }
-            @*searchBy=field.Key&searchString=textBox.text*@
-        </select>
+                @*searchBy=field.Key&searchString=textBox.text*@
+            </select>
+        </div>
+        <div class="flex-1">
+            <input type="search" id="Search" class="form-input" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+        </div>
+        <div class="flex-1">
+            <button class="button button-blue-back">Search</button>
+            <a href="~/persons/index" class="link-hover">Clear all</a>
+        </div>
     </div>
-    <div class="flex-1">
-        <input type="search" id="Search" class="form-input" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString"/>
-    </div>
-    <div class="flex-1">
-        <button class="button button-blue-back">Search</button>
-        <a href="~/persons/index" class="link-hover">Clear all</a>
-    </div>
-</div>
 
-<table class="table w-100 mt">
-    <thead>
-        <tr>
-            <th>Person Name</th>
-            <th>Email</th>
-            <th>Date of Birth</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Country</th>
-            <th>Address</th>
-            <th>Recieve News Letter</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(PersonResponse person in Model)
-        {
+    <table class="table w-100 mt">
+        <thead>
             <tr>
-                <td>@person.Name</td>
-                <td>@person.Email</td>
-                <td>@person.DateOfBirth?.ToString("dd MMM yyyy")</td>
-                <td>@person.Age</td>
-                <td>@person.Gender</td>
-                <td>@person.Country</td>
-                <td>@person.Address</td>
-                <td>@person.ReceiveNewsLetters</td>
+                @if(ViewBag.CurrentSortBy == nameof(PersonResponse.Name) && ViewBag.CurrentSortOrder == SortOrderOptions.ASC.ToString())
+                {
+                    <th>
+                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.DESC)">Person Name</a>
+                        <i class="fa-solid fa-sort-up"></i>
+                    </th>
+                }
+                else if(ViewBag.CurrentSortBy == nameof(PersonResponse.Name) && ViewBag.CurrentSortOrder == SortOrderOptions.DESC.ToString())
+                {
+                    <th>
+                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
+                        <i class="fa-solid fa-sort-down"></i>
+                    </th>
+                }
+                else
+                {
+                    <th>
+                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
+                    </th>
+                }
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>Address</th>
+                <th>Recieve News Letter</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (PersonResponse person in Model)
+            {
+                <tr>
+                    <td>@person.Name</td>
+                    <td>@person.Email</td>
+                    <td>@person.DateOfBirth?.ToString("dd MMM yyyy")</td>
+                    <td>@person.Age</td>
+                    <td>@person.Gender</td>
+                    <td>@person.Country</td>
+                    <td>@person.Address</td>
+                    <td>@person.ReceiveNewsLetters</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </form>
