@@ -8,7 +8,12 @@
 
 <div class="box flex">
     <div class="flex-1">
-        <select class="form-input"></select>
+        <select class="form-input">
+            @foreach(var field in ViewBag.SearchFields)
+            {
+                <option value="@field.Key">@field.Value</option>
+            }
+        </select>
     </div>
     <div class="flex-1">
         <input type="search" id="Search" class="form-input" placeholder="Search" />
