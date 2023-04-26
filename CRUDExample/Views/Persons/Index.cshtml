@@ -9,7 +9,7 @@
 <div class="box flex">
     <div class="flex-1">
         <select class="form-input">
-            @foreach(var field in ViewBag.SearchFields)
+            @foreach(var field in ViewBag.SearchField)
             {
                 <option value="@field.Key">@field.Value</option>
             }
