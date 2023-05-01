@@ -19,7 +19,7 @@ namespace CRUDExample.Controllers
 
         }
 
-        [Route("index")]
+        [Route("[action]")]
         [Route("/")]
         public IActionResult Index(string searchBy, string? searchString = "", string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
@@ -49,7 +49,7 @@ namespace CRUDExample.Controllers
         }
 
         //Executes when the user clicks on "Create Person" hyperlink
-        [Route("create")]
+        [Route("[action]")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -58,7 +58,7 @@ namespace CRUDExample.Controllers
             return View();
         }
 
-        [Route("create")]
+        [Route("[action]")]
         [HttpPost]
         public IActionResult Create(PersonAddRequest personAddRequest)
         {
