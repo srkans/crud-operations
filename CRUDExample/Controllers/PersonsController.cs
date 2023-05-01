@@ -18,7 +18,7 @@ namespace CRUDExample.Controllers
 
         [Route("persons/index")]
         [Route("/")]
-        public IActionResult Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
+        public IActionResult Index(string searchBy, string? searchString = "", string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             //Search
             ViewBag.SearchField = new Dictionary<string, string>()

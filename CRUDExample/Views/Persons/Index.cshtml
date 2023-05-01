@@ -39,21 +39,21 @@
                 @if(ViewBag.CurrentSortBy == nameof(PersonResponse.Name) && ViewBag.CurrentSortOrder == SortOrderOptions.ASC.ToString())
                 {
                     <th>
-                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.DESC)">Person Name</a>
+                        <a href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.DESC)">Person Name</a>
                         <i class="fa-solid fa-sort-up"></i>
                     </th>
                 }
                 else if(ViewBag.CurrentSortBy == nameof(PersonResponse.Name) && ViewBag.CurrentSortOrder == SortOrderOptions.DESC.ToString())
                 {
                     <th>
-                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
+                        <a href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
                         <i class="fa-solid fa-sort-down"></i>
                     </th>
                 }
                 else
                 {
                     <th>
-                        <a href="~persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
+                        <a href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.Name)&sortOrder=@nameof(SortOrderOptions.ASC)">Person Name</a>
                     </th>
                 }
                 <th>Email</th>
