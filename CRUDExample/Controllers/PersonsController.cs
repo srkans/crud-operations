@@ -5,7 +5,7 @@ using ServiceContracts.Enums;
 
 namespace CRUDExample.Controllers
 {
-    [Route("persons")]
+    [Route("[controller]")]
     public class PersonsController : Controller
     {
 
