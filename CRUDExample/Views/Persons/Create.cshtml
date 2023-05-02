@@ -46,14 +46,14 @@
                 @foreach(string gender in genders)
                 {
                     <input asp-for="Gender" type="radio" value="@gender"/>
-                    <label for="@gender">@gender</label>
+                    <label asp-for="@gender">@gender</label>
                 }
             </div>
         </div>
         @*Country*@
         <div class="form-field flex">
             <div class="w-25">
-                <label class="form-label" for="CountryID">Country</label>
+                <label class="form-label" asp-for="CountryID">Country</label>
             </div>
             <div class="flex-1">
                 <select asp-for="CountryID" class="form-input" asp-items="@ViewBag.Countries">
@@ -64,7 +64,7 @@
         @*Address*@
         <div class="form-field flex">
             <div class="w-25">
-                <label for="Address" class="form-label pt">Address</label>
+                <label asp-for="Address" class="form-label pt">Address</label>
             </div>
             <div class="flex-1">
                 <textarea asp-for="Address" class="form-input"></textarea>
@@ -76,7 +76,7 @@
             </div>
             <div class="flex-1">
                 <input type="checkbox" asp-for="ReceiveNewsLetters" value="true" />
-                <label for="ReceiveNewsLetters" class="form-label">Receive News Letter</label>
+                <label asp-for="ReceiveNewsLetters" class="form-label">Receive News Letter</label>
             </div>
         </div>
         @*Submit Button*@
