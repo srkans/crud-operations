@@ -19,14 +19,14 @@
 
 .navbar
 {
-    background-color: #cacaca;
+    background-color: wheat;
     padding: 10px;
-    box-shadow: 0px 1px 2px 2px #cacaca;
+    box-shadow: 0px 1px 2px 2px #000000;
 }
 
 .navbar-brand
 {
-    margin: 0px 30px 5px 5px;
+    margin: 0px 10px 5px 5px;
     font-size: 1.1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -442,5 +442,16 @@ a.link-hover:hover
     {
         display: inline-block;
         width: auto;
+    }
+
+    .center-box
+    {
+        width:70%;
+        margin:auto;
+    }
+
+    .form-field>div
+    {
+        padding:15px !important;
     }
 }

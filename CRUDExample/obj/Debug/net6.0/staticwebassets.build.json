@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4CHGaj2JLnSFAu4WuhzsCDUQkfWL42edkbdBgzcY2Ho=",
+  "Hash": "WD+vRlIYgUVi+3Nlw9zhNgV+Nes/40PoLrsrqT9uMMQ=",
   "Source": "CRUDExample",
   "BasePath": "_content/CRUDExample",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Identity": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\logo.png",
+      "SourceId": "CRUDExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\",
+      "BasePath": "_content/CRUDExample",
+      "RelativePath": "logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
     },
     {
       "Identity": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\StyleSheet.css",
