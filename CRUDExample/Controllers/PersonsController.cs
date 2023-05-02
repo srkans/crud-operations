@@ -55,7 +55,9 @@ namespace CRUDExample.Controllers
         public IActionResult Create()
         {
             List<CountryResponse> countries = _countriesService.GetAllCountries();
-            ViewBag.Countries = countries;
+            ViewBag.Countries = countries.Select(temp =>
+            new SelectListItem() { Text=temp.CountryName, Value=temp.CountryID.ToString()}
+            );
 
             //new SelectListItem() { Text="Serkan", Value="1"}
             //<option value="1">Serkan</option>
