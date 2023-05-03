@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceContracts;
 using ServiceContracts.DTO;
@@ -129,8 +130,39 @@ namespace CRUDExample.Controllers
 
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
 
-                return View();
+                return View(personResponse.ToPersonUpdateRequest());
             }
+        }
+
+        [HttpGet]
+        [Route("[action]/{personID}")]
+        public IActionResult Delete(Guid personID)
+        {
+            PersonResponse? personResponse = _personsService.GetPersonByPersonID(personID);
+
+            if(personResponse == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(personResponse);
+        }
+
+        [HttpPost]
+        [Route("[action]/{personID}")] // ~/persons/delete/1
+        public IActionResult Delete(PersonUpdateRequest personUpdateResult)
+        {
+            PersonResponse? personResponse = _personsService.GetPersonByPersonID(personUpdateResult.PersonID);
+            
+            if (personResponse == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            _personsService.DeletePerson(personResponse.PersonID);
+
+            return RedirectToAction("Index");
+                  
         }
     }
 }

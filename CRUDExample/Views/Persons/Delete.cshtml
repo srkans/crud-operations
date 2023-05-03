@@ -1,0 +1,64 @@
+﻿@model PersonResponse
+@{
+    ViewBag.Title = "Delete Person";
+}
+<a href="~/persons/index" class="link-hover">Back to Persons List</a>
+<h2>Delete Person</h2>
+
+<div class="center-box">
+    <form asp-controller="Persons" asp-action="Delete" method="post">
+        <input type="hidden" asp-for="PersonID" />
+        @*Name*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Name" class="form-label pt">Person Name</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Name" class="form-input" disabled="disabled"/>
+                <span class="text-red" asp-validation-for="Name"></span>
+            </div>
+        </div>
+        @*Email*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Email" class="form-label pt">Email</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Email" class="form-input" disabled="disabled" />
+                <span class="text-red" asp-validation-for="Email"></span>
+            </div>
+        </div>
+        @*Date of Birth*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="DateOfBirth" class="form-label pt">Date of Birth</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="DateOfBirth" class="form-input" disabled="disabled"/>
+                <span class="text-red" asp-validation-for="DateOfBirth"></span>
+            </div>
+        </div>
+        @*Submit Button*@
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button class="button button-red-back">Delete</button>
+                <div asp-validation-summary="All" class="text-red"></div>
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="text-red ml">
+                        <ul>
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li class="ml">@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </form>
+</div>
+
