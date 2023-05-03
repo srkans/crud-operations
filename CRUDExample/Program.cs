@@ -12,7 +12,7 @@ builder.Services.AddSingleton<IPersonsService, PersonsService>();
 
 builder.Services.AddDbContext<PersonsDbContext>(options =>
 {
-    options.UseSqlServer();
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
 
 var app = builder.Build();
