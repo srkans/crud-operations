@@ -6,22 +6,11 @@ namespace Services
 {
     public class CountriesService : ICountriesService
     {
-        private readonly List<Country> _countries;
+        private readonly PersonsDbContext _dbContext;
 
-        public CountriesService(bool initialize = true)
+        public CountriesService(PersonsDbContext personsDbContext)
         {
-            _countries = new List<Country>();
-
-            if(initialize)
-            {
-                _countries.AddRange(new List<Country>() {
-                new Country() { CountryID = Guid.Parse("A5082F1A-8A91-480C-B709-E2824286F04F"), CountryName = "Türkiye" },
-                new Country() { CountryID = Guid.Parse("B76053EB-EEC4-4258-8147-A3C514C03BC2"), CountryName = "Australia" },
-                new Country() { CountryID = Guid.Parse("EF0BC4B1-EDF1-4598-8A5C-45EE61A74AF4"), CountryName = "China" },
-                new Country() { CountryID = Guid.Parse("60A0F453-D0DE-44F8-BCDA-53BA837E0148"), CountryName = "USA" },
-                new Country() { CountryID = Guid.Parse("3E3F9AC3-D1DE-4DF1-B1F0-F10A014AEC3D"), CountryName = "Japan" }
-                });
-            }
+            _dbContext = personsDbContext;
         }
 
         public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
@@ -39,7 +28,7 @@ namespace Services
             }
 
             //Validation:countryName duplicate not allowed
-            if(_countries.Where(temp=>temp.CountryName == countryAddRequest.CountryName).Count()>0)
+            if(_dbContext.Countries.Where(temp=>temp.CountryName == countryAddRequest.CountryName).Count()>0)
             {
                 throw new ArgumentException("Given country name already exist");
             }
@@ -51,14 +40,15 @@ namespace Services
             country.CountryID = Guid.NewGuid();
 
             //Add country object into _countries
-            _countries.Add(country);
+            _dbContext.Add(country);
+            _dbContext.SaveChanges();
 
             return country.ToCountryResponse(); //bu methoddaki yapı sayesinde domain model'i servis'in dışına göstermemiş oluyoruz.
         }
 
         public List<CountryResponse> GetAllCountries()
         {
-            return _countries.Select(country=>country.ToCountryResponse()).ToList();
+            return _dbContext.Countries.Select(country=>country.ToCountryResponse()).ToList();
         }
 
         public CountryResponse? GetCountryById(Guid? countryID)
@@ -68,7 +58,7 @@ namespace Services
                 return null;
             }
 
-            Country? countryFromList = _countries.FirstOrDefault(temp => temp.CountryID == countryID);
+            Country? countryFromList = _dbContext.Countries.FirstOrDefault(temp => temp.CountryID == countryID);
 
             if(countryFromList == null)
             { 
