@@ -10,3 +10,5 @@ F:\Documents\xunit\Entities\obj\Debug\net6.0\Entities.dll
 F:\Documents\xunit\Entities\obj\Debug\net6.0\refint\Entities.dll
 F:\Documents\xunit\Entities\obj\Debug\net6.0\Entities.pdb
 F:\Documents\xunit\Entities\obj\Debug\net6.0\ref\Entities.dll
+F:\Documents\xunit\Entities\bin\Debug\net6.0\Entities.runtimeconfig.json
+F:\Documents\xunit\Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache

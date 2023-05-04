@@ -15,8 +15,7 @@ namespace Entities
         [StringLength(10)]
         public string? Gender { get; set; }
         public Guid? CountryID { get; set; } //foreign key for country table
-        [StringLength(40)]
-        public string? Country { get; set; }
+
         [StringLength(200)]
         public string? Address { get; set; }
         public bool ReceiveNewsLetters { get; set; }
