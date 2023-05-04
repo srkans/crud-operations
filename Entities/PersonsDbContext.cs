@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 
@@ -48,6 +49,22 @@ namespace Entities
            return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]"); //.ToList() ile eager loading yapılabilir
         }
 
+        public int sp_InsertPerson(Person person)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@PersonID",person.PersonID),
+                new SqlParameter("@Name",person.Name),
+                new SqlParameter("@Email",person.Email),
+                new SqlParameter("@DateOfBirth",person.DateOfBirth),
+                new SqlParameter("@Gender",person.Gender),
+                new SqlParameter("@CountryID",person.CountryID),
+                new SqlParameter("@Address",person.Address),
+                new SqlParameter("@ReceiveNewsLetters",person.ReceiveNewsLetters)
+            };
 
+            return Database.ExecuteSqlRaw("EXECUTE [dbo].[InsertPerson] @PersonID, @Name, @Email, @DateOfBirth, @Gender, @CountryID, @Address, @ReceiveNewsLetters", parameters);
+
+        }
     }
 }
