@@ -42,6 +42,12 @@ namespace Entities
             {
                 modelBuilder.Entity<Person>().HasData(person);
             }
+
+            //Fluent API
+            modelBuilder.Entity<Person>().Property(temp => temp.Address)
+                                                                        .HasColumnName("Address")
+                                                                        .HasColumnType("nvarchar(200)");
+
         }
 
         public IQueryable<Person> sp_GetAllPersons()

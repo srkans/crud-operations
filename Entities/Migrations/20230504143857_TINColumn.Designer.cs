@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(PersonsDbContext))]
-    partial class PersonsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230504143857_TINColumn")]
+    partial class TINColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,8 +73,7 @@ namespace Entities.Migrations
 
                     b.Property<string>("Address")
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("Address");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<Guid?>("CountryID")
                         .HasColumnType("uniqueidentifier");
@@ -94,6 +95,9 @@ namespace Entities.Migrations
 
                     b.Property<bool>("ReceiveNewsLetters")
                         .HasColumnType("bit");
+
+                    b.Property<string>("TIN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonID");
 
