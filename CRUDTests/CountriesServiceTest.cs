@@ -3,6 +3,7 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using Entities;
 using Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUDTests
 {
@@ -13,7 +14,7 @@ namespace CRUDTests
 
         public CountriesServiceTest()
         {
-            _countriesService = new CountriesService(false);
+            _countriesService = new CountriesService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options));
         }
         #region AddCountry
         //When CountryAddRequest is null, it should ArgumentNullException

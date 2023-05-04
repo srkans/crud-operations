@@ -43,6 +43,11 @@ namespace Entities
             }
         }
 
+        public IQueryable<Person> sp_GetAllPersons()
+        {
+           return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]"); //.ToList() ile eager loading yapılabilir
+        }
+
 
     }
 }

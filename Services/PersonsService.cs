@@ -50,8 +50,10 @@ namespace Services
 
         public List<PersonResponse> GetAllPersons()
         {
-             return _dbContext.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+          //   return _dbContext.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
             //Linq ef uzerinde userdefined func cagiramadigin icin oncelikle tolist() ile person objesini eager yukledik
+
+            return _dbContext.sp_GetAllPersons().ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
         public PersonResponse? GetPersonByPersonID(Guid? personID)
