@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
     public class Person //Domain model class
     {
+        [Key]
         public Guid PersonID { get; set; }
+        [StringLength(40)] //nvarchar(40)
         public string? Name { get; set; }
+        [StringLength(50)]
         public string? Email { get; set; }
         public DateTime? DateOfBirth { get; set; }
+        [StringLength(10)]
         public string? Gender { get; set; }
         public Guid? CountryID { get; set; } //foreign key for country table
+        [StringLength(40)]
         public string? Country { get; set; }
+        [StringLength(200)]
         public string? Address { get; set; }
         public bool ReceiveNewsLetters { get; set; }
 
