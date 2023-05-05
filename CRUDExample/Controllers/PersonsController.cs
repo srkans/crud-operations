@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -36,13 +37,13 @@ namespace CRUDExample.Controllers
                 { nameof(PersonResponse.Address), "Address" }
             };
 
-            List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy,searchString);
+            List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
 
             ViewBag.CurrentSearchBy = searchBy;
             ViewBag.CurrentSearchString = searchString;
 
             //Sort
-            List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons,sortBy,sortOrder);
+            List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
 
             ViewBag.CurrentSortBy = sortBy;
             ViewBag.CurrentSortOrder = sortOrder.ToString();
@@ -57,7 +58,7 @@ namespace CRUDExample.Controllers
         {
             List<CountryResponse> countries = await _countriesService.GetAllCountries();
             ViewBag.Countries = countries.Select(temp =>
-            new SelectListItem() { Text=temp.CountryName, Value=temp.CountryID.ToString()}
+            new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() }
             );
 
             //new SelectListItem() { Text="Serkan", Value="1"}
@@ -75,13 +76,13 @@ namespace CRUDExample.Controllers
                 ViewBag.Countries = countries.Select(temp =>
                 new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() }
                 );
-                ViewBag.Errors = ModelState.Values.SelectMany(v=>v.Errors).Select(e=>e.ErrorMessage).ToList();
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
                 return View();
             }
 
             PersonResponse personResponse = await _personsService.AddPerson(personAddRequest);
-            
-            return RedirectToAction("Index","Persons");
+
+            return RedirectToAction("Index", "Persons");
         }
 
         [HttpGet]
@@ -90,7 +91,7 @@ namespace CRUDExample.Controllers
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
 
-            if(personResponse == null)
+            if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
@@ -111,12 +112,12 @@ namespace CRUDExample.Controllers
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateRequest.PersonID);
 
-            if(personResponse == null)
+            if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 PersonResponse updatedPerson = await _personsService.UpdatePerson(personUpdateRequest);
                 return RedirectToAction("Index");
@@ -140,7 +141,7 @@ namespace CRUDExample.Controllers
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
 
-            if(personResponse == null)
+            if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
@@ -153,7 +154,7 @@ namespace CRUDExample.Controllers
         public async Task<IActionResult> Delete(PersonUpdateRequest personUpdateResult)
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateResult.PersonID);
-            
+
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
@@ -162,7 +163,19 @@ namespace CRUDExample.Controllers
             await _personsService.DeletePerson(personResponse.PersonID);
 
             return RedirectToAction("Index");
-                  
+
+        }
+
+        [Route("[action]")]
+        public async Task<IActionResult> PersonsPDF()
+        {
+            List<PersonResponse> persons = await _personsService.GetAllPersons();
+
+            return new ViewAsPdf("PersonsPDF", persons, ViewData)
+            {
+                PageMargins = new Rotativa.AspNetCore.Options.Margins() { Top = 20, Bottom = 20, Left = 20, Right = 20 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
+            };
         }
     }
 }
