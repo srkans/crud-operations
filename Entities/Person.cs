@@ -21,7 +21,7 @@ namespace Entities
         public string? Address { get; set; }
         public bool ReceiveNewsLetters { get; set; }
         [ForeignKey("CountryID")]
-        public Country? Country { get; set; }
+        public virtual Country? Country { get; set; }
 
     }
 }

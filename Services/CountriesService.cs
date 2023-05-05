@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 
@@ -13,7 +14,7 @@ namespace Services
             _dbContext = personsDbContext;
         }
 
-        public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
+        public async Task<CountryResponse> AddCountry(CountryAddRequest? countryAddRequest)
         {
             //Validation:countryAddRequest can't be null
             if(countryAddRequest == null)
@@ -28,7 +29,7 @@ namespace Services
             }
 
             //Validation:countryName duplicate not allowed
-            if(_dbContext.Countries.Where(temp=>temp.CountryName == countryAddRequest.CountryName).Count()>0)
+            if(await _dbContext.Countries.CountAsync(temp=>temp.CountryName == countryAddRequest.CountryName)>0)
             {
                 throw new ArgumentException("Given country name already exist");
             }
@@ -41,14 +42,14 @@ namespace Services
 
             //Add country object into _countries
             _dbContext.Add(country);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return country.ToCountryResponse(); //bu methoddaki yapı sayesinde domain model'i servis'in dışına göstermemiş oluyoruz.
         }
 
-        public List<CountryResponse> GetAllCountries()
+        public async Task<List<CountryResponse>> GetAllCountries()
         {
-            return _dbContext.Countries.Select(country=>country.ToCountryResponse()).ToList();
+            return await _dbContext.Countries.Select(country=>country.ToCountryResponse()).ToListAsync();
         }
 
         public CountryResponse? GetCountryById(Guid? countryID)
