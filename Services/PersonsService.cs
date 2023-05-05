@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using CsvHelper;
 using System.Globalization;
 using System.IO;
+using CsvHelper.Configuration;
 
 namespace Services
 {
@@ -202,14 +203,45 @@ namespace Services
         {
             MemoryStream memoryStream = new MemoryStream();
             StreamWriter streamWriter = new StreamWriter(memoryStream);
-            CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture,leaveOpen:true);
 
-            csvWriter.WriteHeader<PersonResponse>(); //ColumnNames
+            CsvConfiguration csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture);
+
+            CsvWriter csvWriter = new CsvWriter(streamWriter, csvConfiguration); //Culture info EN-US etc.
+
+            //manuel olarak istenilen satırlar eklendi
+            csvWriter.WriteField(nameof(PersonResponse.Name));
+            csvWriter.WriteField(nameof(PersonResponse.Email));
+            csvWriter.WriteField(nameof(PersonResponse.DateOfBirth));
+            csvWriter.WriteField(nameof(PersonResponse.Age));
+            csvWriter.WriteField(nameof(PersonResponse.Gender));
+            csvWriter.WriteField(nameof(PersonResponse.Country));
+            csvWriter.WriteField(nameof(PersonResponse.Address));
+            csvWriter.WriteField(nameof(PersonResponse.ReceiveNewsLetters));
             csvWriter.NextRecord();
+            csvWriter.Flush();
 
             List<PersonResponse> persons = await _dbContext.Persons.Include("Country").Select(temp => temp.ToPersonResponse()).ToListAsync();
 
-            await csvWriter.WriteRecordsAsync(persons);
+            foreach(PersonResponse person in persons)
+            {
+                csvWriter.WriteField(person.Name);
+                csvWriter.WriteField(person.Email);
+                if (person.DateOfBirth.HasValue)
+                {
+                    csvWriter.WriteField(person.DateOfBirth.Value.ToString("d/MM/yyyy"));
+                }
+                else
+                {
+                    csvWriter.WriteField("");
+                }
+                csvWriter.WriteField(person.Age);
+                csvWriter.WriteField(person.Gender);
+                csvWriter.WriteField(person.Country);
+                csvWriter.WriteField(person.Address);
+                csvWriter.WriteField(person.ReceiveNewsLetters);
+                csvWriter.NextRecord(); //next cursor
+                csvWriter.Flush(); //write line
+            }
 
             memoryStream.Position = 0; //stream cursor'ı başa almak gerekiyor.
 
