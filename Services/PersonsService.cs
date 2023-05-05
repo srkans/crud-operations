@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Services.Helpers;
 using System.Runtime.CompilerServices;
 using ServiceContracts.Enums;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
@@ -21,13 +22,6 @@ namespace Services
             _countriesService = countriesService;
         }
 
-        private PersonResponse ConvertPersonToPersonResponse(Person person)
-        {
-            PersonResponse personResponse = person.ToPersonResponse();
-            personResponse.Country = _countriesService.GetCountryById(person.CountryID)?.CountryName;
-
-            return personResponse;
-        }
         public PersonResponse AddPerson(PersonAddRequest? personAddRequest)
         {
             //Model Validations
@@ -41,21 +35,23 @@ namespace Services
 
             person.PersonID = Guid.NewGuid();
 
-            //_dbContext.Persons.Add(person);
-            //_dbContext.SaveChanges();
+            _dbContext.Persons.Add(person);
+            _dbContext.SaveChanges();
 
-            _dbContext.sp_InsertPerson(person);
+            //_dbContext.sp_InsertPerson(person);
 
-            return ConvertPersonToPersonResponse(person);
+            return person.ToPersonResponse();
 
         }
 
         public List<PersonResponse> GetAllPersons()
         {
-          //   return _dbContext.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+            var persons = _dbContext.Persons.Include("Country").ToList();
+
+            return persons.Select(temp => temp.ToPersonResponse()).ToList();
             //Linq ef uzerinde userdefined func cagiramadigin icin oncelikle tolist() ile person objesini eager yukledik
 
-            return _dbContext.sp_GetAllPersons().ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+            //return _dbContext.sp_GetAllPersons().ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
         public PersonResponse? GetPersonByPersonID(Guid? personID)
@@ -65,14 +61,14 @@ namespace Services
                 return null;
             }
 
-           Person? person = _dbContext.Persons.FirstOrDefault(temp=>temp.PersonID == personID);
+           Person? person = _dbContext.Persons.Include("Country").FirstOrDefault(temp=>temp.PersonID == personID);
 
             if(person == null)
             {
                 return null;
             }
 
-            return ConvertPersonToPersonResponse(person);
+            return person.ToPersonResponse();
         }
 
         public List<PersonResponse> GetFilteredPersons(string searchBy, string? searchString)
@@ -182,7 +178,7 @@ namespace Services
 
             _dbContext.SaveChanges();
 
-            return ConvertPersonToPersonResponse(matchingPerson);
+            return matchingPerson.ToPersonResponse();
         }
 
         public bool DeletePerson(Guid personID)

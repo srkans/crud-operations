@@ -57,6 +57,7 @@ namespace ServiceContracts.DTO
         {
             return new PersonUpdateRequest() { PersonID = PersonID, Name = Name, Email = Email, DateOfBirth = DateOfBirth, Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions),Gender,true), Address = Address, CountryID = CountryID, ReceiveNewsLetters = ReceiveNewsLetters };
         }
+
     }
 
 
@@ -79,7 +80,8 @@ namespace ServiceContracts.DTO
                 CountryID = person.CountryID,
                 Address = person.Address,
                 ReceiveNewsLetters = person.ReceiveNewsLetters,
-                Age = (person.DateOfBirth != null) ? Math.Round((DateTime.Now - person.DateOfBirth.Value).TotalDays / 362.25) : null               
+                Age = (person.DateOfBirth != null) ? Math.Round((DateTime.Now - person.DateOfBirth.Value).TotalDays / 362.25) : null,
+                Country = person.Country?.CountryName
             };
         }
     }
