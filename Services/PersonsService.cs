@@ -2,11 +2,13 @@
 using Entities;
 using ServiceContracts.DTO;
 using ServiceContracts;
-using System.ComponentModel.DataAnnotations;
 using Services.Helpers;
 using System.Runtime.CompilerServices;
 using ServiceContracts.Enums;
 using Microsoft.EntityFrameworkCore;
+using CsvHelper;
+using System.Globalization;
+using System.IO;
 
 namespace Services
 {
@@ -194,6 +196,24 @@ namespace Services
             _dbContext.Persons.Remove(person);
             await _dbContext.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<MemoryStream> GetPersonsCSV()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            StreamWriter streamWriter = new StreamWriter(memoryStream);
+            CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture,leaveOpen:true);
+
+            csvWriter.WriteHeader<PersonResponse>(); //ColumnNames
+            csvWriter.NextRecord();
+
+            List<PersonResponse> persons = await _dbContext.Persons.Include("Country").Select(temp => temp.ToPersonResponse()).ToListAsync();
+
+            await csvWriter.WriteRecordsAsync(persons);
+
+            memoryStream.Position = 0; //stream cursor'ı başa almak gerekiyor.
+
+            return memoryStream;
         }
     }
 }

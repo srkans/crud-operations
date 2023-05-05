@@ -177,5 +177,12 @@ namespace CRUDExample.Controllers
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
             };
         }
+
+        [Route("[action]")]
+        public async Task<IActionResult> PersonsCSV()
+        {
+           MemoryStream memoryStream = await _personsService.GetPersonsCSV();
+            return File(memoryStream, "app/octet-stream", "persons.csv");
+        }
     }
 }

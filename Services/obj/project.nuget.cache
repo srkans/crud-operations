@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0KufbEWuhTPsh/vXUWTFMxVRZoTKLjeZONYs+PmR2o9jbPRGdCKOEWoFuY9kTngS2yFRrbPtDdkD7e3YCyAPaA==",
+  "dgSpecHash": "aRutnGIMptsWlPCSSoi8k7wZ6XHNuDAf8KTLWeSVkFCGR4uFuLYPiV8g2advEScA46gE2gDFL9FKsCSr7jNO2g==",
   "success": true,
   "projectFilePath": "F:\\Documents\\xunit\\Services\\Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\serka\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
