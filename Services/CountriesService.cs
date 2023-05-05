@@ -52,14 +52,14 @@ namespace Services
             return await _dbContext.Countries.Select(country=>country.ToCountryResponse()).ToListAsync();
         }
 
-        public CountryResponse? GetCountryById(Guid? countryID)
+        public async Task<CountryResponse?> GetCountryById(Guid? countryID)
         {
             if(countryID == null)
             {
                 return null;
             }
 
-            Country? countryFromList = _dbContext.Countries.FirstOrDefault(temp => temp.CountryID == countryID);
+            Country? countryFromList = await _dbContext.Countries.FirstOrDefaultAsync(temp => temp.CountryID == countryID);
 
             if(countryFromList == null)
             { 
