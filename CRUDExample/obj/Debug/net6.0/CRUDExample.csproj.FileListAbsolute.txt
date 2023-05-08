@@ -83,3 +83,7 @@ F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Rotativa.AspNetCore.dll
 F:\Documents\xunit\CRUDExample\obj\Debug\net6.0\CRUDExample.MvcApplicationPartsAssemblyInfo.cs
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\CsvHelper.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\EPPlus.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\EPPlus.Interfaces.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
