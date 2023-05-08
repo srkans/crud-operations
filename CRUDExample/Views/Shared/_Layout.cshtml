@@ -15,8 +15,9 @@
                 <div class="navbar-brand"><img src="~/logo.png" width="50px" asp-append-version="true"/></div>
                 <ul>
                     <li>
-                        <a href="~/persons/index">Persons</a>
-                        <a href="~/persons/Create">Create Person</a>
+                        <a asp-controller="Persons" asp-action="Index">Persons</a>
+                        <a asp-controller="Persons" asp-action="Create">Create Person</a>
+                        <a asp-controller="Countries" asp-action="UploadFromExcel">Upload Excel File</a>
                     </li>
                 </ul>
             </div>
