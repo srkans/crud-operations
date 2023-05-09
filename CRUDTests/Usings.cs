@@ -1,1 +1,13 @@
 global using Xunit;
+global using ServiceContracts;
+global using ServiceContracts.DTO;
+global using Entities;
+global using System;
+global using Services;
+global using Xunit.Abstractions;
+global using ServiceContracts.Enums;
+global using Microsoft.EntityFrameworkCore;
+global using EntityFrameworkCoreMock;
+global using Moq;
+global using AutoFixture;
+global using FluentAssertions;

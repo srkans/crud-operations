@@ -172,3 +172,4 @@ F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Dia
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\AutoFixture.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fare.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\FluentAssertions.dll
