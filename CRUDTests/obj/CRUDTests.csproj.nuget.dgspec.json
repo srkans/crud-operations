@@ -50,6 +50,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoFixture": {
+              "target": "Package",
+              "version": "[4.17.0, )"
+            },
             "EntityFrameworkCoreMock.Moq": {
               "target": "Package",
               "version": "[2.4.0, )"

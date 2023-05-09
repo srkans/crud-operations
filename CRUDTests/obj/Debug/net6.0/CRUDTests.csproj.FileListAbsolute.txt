@@ -170,3 +170,5 @@ F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Moq.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\AutoFixture.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fare.dll
