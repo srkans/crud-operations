@@ -4,6 +4,8 @@ using ServiceContracts.DTO;
 using Entities;
 using Services;
 using Microsoft.EntityFrameworkCore;
+using EntityFrameworkCoreMock;
+using Moq;
 
 namespace CRUDTests
 {
@@ -14,7 +16,15 @@ namespace CRUDTests
 
         public CountriesServiceTest()
         {
-            _countriesService = new CountriesService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options));
+            var countriesInitialData = new List<Country>() { }; //empty collection as a data source
+
+            DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(new DbContextOptionsBuilder<ApplicationDbContext>().Options);
+
+            ApplicationDbContext dbContext = dbContextMock.Object; //ApplicationDbContext is mock but behaves like original
+
+            dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData); //mock for DbSet<Country>
+
+            _countriesService = new CountriesService(dbContext);
         }
         #region AddCountry
         //When CountryAddRequest is null, it should ArgumentNullException

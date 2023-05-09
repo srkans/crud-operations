@@ -6,6 +6,8 @@ using Services;
 using Xunit.Abstractions;
 using ServiceContracts.Enums;
 using Microsoft.EntityFrameworkCore;
+using EntityFrameworkCoreMock;
+using Moq;
 
 namespace CRUDTests
 {
@@ -17,8 +19,19 @@ namespace CRUDTests
 
         public PersonServiceTests(ITestOutputHelper testOutputHelper)
         {
-            _countriesService = new CountriesService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options));
-            _personsService = new PersonsService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options), _countriesService);
+            var countriesInitialData = new List<Country>() { }; //empty collection as a data source
+            var personsInitialData = new List<Person>() { };
+
+            DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(new DbContextOptionsBuilder<ApplicationDbContext>().Options);
+
+            ApplicationDbContext dbContext = dbContextMock.Object; //ApplicationDbContext is mock but behaves like original
+
+            dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData); //mock for DbSet<Country>
+            dbContextMock.CreateDbSetMock(temp => temp.Persons, personsInitialData);
+
+            _countriesService = new CountriesService(dbContext);
+            _personsService = new PersonsService(dbContext, _countriesService);
+
             _testOutputHelper = testOutputHelper;
         }
 
@@ -61,7 +74,7 @@ namespace CRUDTests
         public async Task AddPerson_ProperPersonObject_ReturnsPersonResponse()
         {
             //Arrange
-            PersonAddRequest? personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "aa@ss.com" };
+            PersonAddRequest? personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "aa@ss.com", Address = "asdasd", CountryID = Guid.NewGuid() };
 
             //Act
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
@@ -100,7 +113,7 @@ namespace CRUDTests
             CountryResponse countryResponse = await _countriesService.AddCountry(countryAddRequest);
 
             //Act
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "serkansacma@gmail.com", CountryID = countryResponse.CountryID };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "serkansacma@gmail.com", CountryID = countryResponse.CountryID, Address = "asdasd" };
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
 
             PersonResponse? personResponseFromGet = await _personsService.GetPersonByPersonID(personResponseFromAdd.PersonID);
@@ -135,9 +148,9 @@ namespace CRUDTests
             CountryResponse countryResponse1 = await _countriesService.AddCountry(countryAddRequest1);
             CountryResponse countryResponse2 = await _countriesService.AddCountry(countryAddRequest2);
 
-            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID };
+            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID, Address = "asdasd" };
 
             List<PersonAddRequest> personAddList = new List<PersonAddRequest> { personAddRequest1, personAddRequest2, personAddRequest3 };
 
@@ -186,9 +199,9 @@ namespace CRUDTests
             CountryResponse countryResponse1 = await _countriesService.AddCountry(countryAddRequest1);
             CountryResponse countryResponse2 = await _countriesService.AddCountry(countryAddRequest2);
 
-            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID };
+            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID, Address = "asdasd" };
 
             List<PersonAddRequest> personAddList = new List<PersonAddRequest> { personAddRequest1, personAddRequest2, personAddRequest3 };
 
@@ -237,9 +250,9 @@ namespace CRUDTests
             CountryResponse countryResponse1 = await _countriesService.AddCountry(countryAddRequest1);
             CountryResponse countryResponse2 = await _countriesService.AddCountry(countryAddRequest2);
 
-            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID };
+            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID , Address = "asdasd" };
+            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID, Address = "asdasd" };
 
             List<PersonAddRequest> personAddList = new List<PersonAddRequest> { personAddRequest1, personAddRequest2, personAddRequest3 };
 
@@ -295,9 +308,9 @@ namespace CRUDTests
             CountryResponse countryResponse1 = await _countriesService.AddCountry(countryAddRequest1);
             CountryResponse countryResponse2 = await _countriesService.AddCountry(countryAddRequest2);
 
-            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID };
-            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID };
+            PersonAddRequest personAddRequest1 = new PersonAddRequest() { Name = "Serkan", Email = "ss@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest2 = new PersonAddRequest() { Name = "Ahmet", Email = "as@asd.com", CountryID = countryResponse1.CountryID, Address = "asdasd" };
+            PersonAddRequest personAddRequest3 = new PersonAddRequest() { Name = "Ali", Email = "bs@asd.com", CountryID = countryResponse2.CountryID, Address = "asdasd" };
 
             List<PersonAddRequest> personAddList = new List<PersonAddRequest> { personAddRequest1, personAddRequest2, personAddRequest3 };
 
@@ -380,7 +393,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "UK" };
             CountryResponse countryResponseFromAdd = await _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male, Address = "asdasd" };
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
 
             PersonUpdateRequest? personUpdateRequest = personResponseFromAdd.ToPersonUpdateRequest();
@@ -402,7 +415,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "UK" };
             CountryResponse countryResponseFromAdd = await _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male};
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", CountryID = countryResponseFromAdd.CountryID, Email = "ss@aa.com", Gender = GenderOptions.Male, Address = "asdasd" };
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
 
             PersonUpdateRequest? personUpdateRequest = personResponseFromAdd.ToPersonUpdateRequest();
@@ -430,7 +443,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Türkiye" };
             CountryResponse countryResponseFromAdd = await _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID, Address = "asdasd" };
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
 
             //Act
@@ -448,7 +461,7 @@ namespace CRUDTests
             CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Türkiye" };
             CountryResponse countryResponseFromAdd = await _countriesService.AddCountry(countryAddRequest);
 
-            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID };
+            PersonAddRequest personAddRequest = new PersonAddRequest() { Name = "Serkan", Email = "ss@aa.com", Gender = GenderOptions.Male, CountryID = countryResponseFromAdd.CountryID, Address = "asdasd" };
             PersonResponse personResponseFromAdd = await _personsService.AddPerson(personAddRequest);
 
             //Act
