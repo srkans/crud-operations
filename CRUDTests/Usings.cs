@@ -11,3 +11,4 @@ global using EntityFrameworkCoreMock;
 global using Moq;
 global using AutoFixture;
 global using FluentAssertions;
+global using RepositoryContracts;
