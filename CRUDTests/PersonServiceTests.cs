@@ -7,30 +7,16 @@ namespace CRUDTests
     public class PersonServiceTests
     {
         private readonly IPersonsService _personService;
-        private readonly ICountriesService _countriesService;
         private readonly Mock<IPersonsRepository> _personRepositoryMock;
         private readonly IPersonsRepository _personsRepository;
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly IFixture _fixture;
-
 
         public PersonServiceTests(ITestOutputHelper testOutputHelper)
         {
             _fixture = new Fixture();
             _personRepositoryMock = new Mock<IPersonsRepository>();
             _personsRepository = _personRepositoryMock.Object;
-
-            var countriesInitialData = new List<Country>() { }; //empty collection as a data source
-            var personsInitialData = new List<Person>() { };
-
-            DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(new DbContextOptionsBuilder<ApplicationDbContext>().Options);
-
-            ApplicationDbContext dbContext = dbContextMock.Object; //ApplicationDbContext is mock but behaves like original
-
-            dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData); //mock for DbSet<Country>
-            dbContextMock.CreateDbSetMock(temp => temp.Persons, personsInitialData);
-
-            _countriesService = new CountriesService(null);
             _personService = new PersonsService(_personsRepository);
 
             _testOutputHelper = testOutputHelper;
@@ -74,7 +60,6 @@ namespace CRUDTests
             };
 
             await action.Should().ThrowAsync<ArgumentException>();
-
         }
 
         //when we supply proper person details, it should insert the person into the persons list and it should return an object of PersonResponse, which include PersonID
@@ -208,7 +193,6 @@ namespace CRUDTests
 
             List<PersonResponse> personResponseListExpected = persons.Select(temp => temp.ToPersonResponse()).ToList();
 
-
             _testOutputHelper.WriteLine("Expected");
             //print personResponses
             foreach (PersonResponse personResponse in personResponseListExpected)
@@ -246,7 +230,6 @@ namespace CRUDTests
             };
 
             List<PersonResponse> personResponseListExpected = persons.Select(temp => temp.ToPersonResponse()).ToList();
-
 
             _testOutputHelper.WriteLine("Expected");
             //print personResponses
@@ -418,7 +401,6 @@ namespace CRUDTests
              .With(temp => temp.Country, null as Country)
              .With(temp => temp.Gender, "Female")
              .Create();
-
 
             _personRepositoryMock
              .Setup(temp => temp.DeletePersonByPersonID(It.IsAny<Guid>()))

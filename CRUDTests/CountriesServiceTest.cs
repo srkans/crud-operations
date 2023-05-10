@@ -1,14 +1,12 @@
 ﻿
 namespace CRUDTests
 {
-
     public class CountriesServiceTest
     {
         private readonly ICountriesService _countriesService;
         private readonly IFixture _fixture;
         private readonly Mock<ICountriesRepository> _countriesRepositoryMock;
         private readonly ICountriesRepository _countriesRepository;
-
         public CountriesServiceTest()
         {
             _fixture = new Fixture();
@@ -190,7 +188,6 @@ namespace CRUDTests
 
             //Act
             CountryResponse? country_response_from_get_method = await _countriesService.GetCountryById(countryID);
-
 
             //Assert
             country_response_from_get_method.Should().BeNull();
