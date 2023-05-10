@@ -1,0 +1,5 @@
+F:\Documents\xunit\Repositories\obj\Debug\net6.0\Repositories.csproj.AssemblyReference.cache
+F:\Documents\xunit\Repositories\obj\Debug\net6.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\xunit\Repositories\obj\Debug\net6.0\Repositories.AssemblyInfoInputs.cache
+F:\Documents\xunit\Repositories\obj\Debug\net6.0\Repositories.AssemblyInfo.cs
+F:\Documents\xunit\Repositories\obj\Debug\net6.0\Repositories.csproj.CoreCompileInputs.cache

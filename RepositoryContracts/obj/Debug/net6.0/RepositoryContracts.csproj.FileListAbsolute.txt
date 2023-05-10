@@ -1,0 +1,15 @@
+F:\Documents\xunit\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.deps.json
+F:\Documents\xunit\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.dll
+F:\Documents\xunit\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.pdb
+F:\Documents\xunit\RepositoryContracts\bin\Debug\net6.0\Entities.dll
+F:\Documents\xunit\RepositoryContracts\bin\Debug\net6.0\Entities.pdb
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.AssemblyReference.cache
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfoInputs.cache
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfo.cs
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CoreCompileInputs.cache
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CopyComplete
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.dll
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\refint\RepositoryContracts.dll
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.pdb
+F:\Documents\xunit\RepositoryContracts\obj\Debug\net6.0\ref\RepositoryContracts.dll
