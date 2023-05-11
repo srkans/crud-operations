@@ -1,4 +1,7 @@
-﻿
+﻿using Fizzler;
+using Fizzler.Systems.HtmlAgilityPack;
+using HtmlAgilityPack;
+
 namespace CRUDTests
 {
     public class PersonsControllerIntegrationTest :IClassFixture<CustomWebApplicationFactory>
@@ -21,6 +24,16 @@ namespace CRUDTests
 
             //Assert
             response.Should().BeSuccessful();
+
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            HtmlDocument html = new HtmlDocument(); //empty html document
+
+            html.LoadHtml(responseBody); //html dom 
+
+            var document = html.DocumentNode;
+
+            document.QuerySelectorAll("table.persons").Should().NotBeNull();
         }
         #endregion
     }

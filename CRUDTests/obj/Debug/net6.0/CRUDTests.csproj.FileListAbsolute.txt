@@ -468,3 +468,7 @@ F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Microsoft.Extensions.Configuration
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\System.IO.Pipelines.dll
 F:\Documents\xunit\CRUDTests\obj\Debug\net6.0\MvcTestingAppManifest.json
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fizzler.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fizzler.Systems.HtmlAgilityPack.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\HtmlAgilityPack.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
