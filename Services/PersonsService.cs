@@ -19,7 +19,7 @@ namespace Services
     public class PersonsService : IPersonsService
     {
         private readonly IPersonsRepository _personsRepository;
-        private readonly ILogger<PersonsService > _logger;
+        private readonly ILogger<PersonsService> _logger;
 
         public PersonsService(IPersonsRepository personsRepository,ILogger<PersonsService> logger)
         {
