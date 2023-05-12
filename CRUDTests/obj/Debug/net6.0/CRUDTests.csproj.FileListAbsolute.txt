@@ -472,3 +472,16 @@ F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fizzler.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Fizzler.Systems.HtmlAgilityPack.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\HtmlAgilityPack.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuthentication.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.AspNetCore.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.File.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll

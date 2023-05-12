@@ -32,7 +32,7 @@ namespace CRUDTests
             //Arrange
             List<PersonResponse> personResponseList = _fixture.Create<List<PersonResponse>>();
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService,null);
 
             _personsServiceMock.Setup(temp => temp.GetFilteredPersons(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(personResponseList);
 
@@ -67,7 +67,7 @@ namespace CRUDTests
 
             _personsServiceMock.Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>())).ReturnsAsync(personResponse);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService,null);
 
             //Act
             personsController.ModelState.AddModelError("Name", "Person name can't be blank"); //model error has been manually added
@@ -94,7 +94,7 @@ namespace CRUDTests
 
             _personsServiceMock.Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>())).ReturnsAsync(personResponse);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService,null);
 
             //Act
             IActionResult result = await personsController.Create(personAddRequest);
