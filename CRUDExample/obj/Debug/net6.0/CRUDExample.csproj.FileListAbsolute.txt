@@ -76,7 +76,6 @@ F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Langu
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
-F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Newtonsoft.Json.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
@@ -91,3 +90,12 @@ F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\RepositoryContracts.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\RepositoryContracts.pdb
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Repositories.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Repositories.pdb
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.AspNetCore.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.File.dll
