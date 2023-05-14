@@ -23,5 +23,10 @@ namespace Entities
         [ForeignKey("CountryID")]
         public virtual Country? Country { get; set; }
 
+        public override string ToString()
+        {
+            return $"Person Id : {PersonID}, Person Name : {Name}";
+        }
+
     }
 }
