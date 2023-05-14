@@ -17,7 +17,7 @@ namespace CRUDTests
             _fixture = new Fixture();
             _personRepositoryMock = new Mock<IPersonsRepository>();
             _personsRepository = _personRepositoryMock.Object;
-            _personService = new PersonsService(_personsRepository,null);
+            _personService = new PersonsService(_personsRepository,null,null);
 
             _testOutputHelper = testOutputHelper;
         }

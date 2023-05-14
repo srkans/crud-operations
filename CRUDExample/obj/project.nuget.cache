@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KgPqpoQ3qBG+UUet3ACe4M4fJMTd+ELYmDt5Imrp81hSfSSgtXKvP1SQnOW4iEmiKSOIvRIvZKnuHkNyKdmDeQ==",
+  "dgSpecHash": "QKWtccsc7zZtsYWwGWxV/u9yWIFLDxjOKjnphsKvu7L4UsDld8GS9vCmzhL9hKVX6NbDfhQ3f2QMcfEIUVQl8A==",
   "success": true,
   "projectFilePath": "F:\\Documents\\xunit\\CRUDExample\\CRUDExample.csproj",
   "expectedPackageFiles": [
@@ -131,6 +131,7 @@
     "C:\\Users\\serka\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\serilog.sinks.mssqlserver\\5.7.1\\serilog.sinks.mssqlserver.5.7.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\serilog.sinks.periodicbatching\\2.3.0\\serilog.sinks.periodicbatching.2.3.0.nupkg.sha512",
+    "C:\\Users\\serka\\.nuget\\packages\\serilogtimings\\3.0.1\\serilogtimings.3.0.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

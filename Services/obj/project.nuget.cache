@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Yqv8NnTYPePMtadEBf9Nrqp1gvRdC2DES8+nDzM5WQU3Dm30IIZYnBItwb4c54zdbDNrruLCop4Qc4/n7hJg5w==",
+  "dgSpecHash": "eUr9h3zcGaEVFDE0gmQOmEwJ8VvBIgyOR14uAjkH50SNsiFQQH9Qsz5yAG8uAbrcw26PfoRTkDm28VdgCmkCHw==",
   "success": true,
   "projectFilePath": "F:\\Documents\\xunit\\Services\\Services.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\serka\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\serilog.extensions.hosting\\5.0.1\\serilog.extensions.hosting.5.0.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\serilog.extensions.logging\\3.1.0\\serilog.extensions.logging.3.1.0.nupkg.sha512",
+    "C:\\Users\\serka\\.nuget\\packages\\serilogtimings\\3.0.1\\serilogtimings.3.0.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

@@ -103,3 +103,4 @@ F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuth
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
 F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+F:\Documents\xunit\CRUDExample\bin\Debug\net6.0\SerilogTimings.dll
