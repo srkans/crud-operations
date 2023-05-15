@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using CRUDExample.Filters.ActionFilters;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativa.AspNetCore;
@@ -26,6 +27,7 @@ namespace CRUDExample.Controllers
 
         [Route("[action]")]
         [Route("/")]
+        [TypeFilter(typeof(PersonsListActionFilter))]
         public async Task<IActionResult> Index(string searchBy, string? searchString = "", string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             _logger.LogInformation("Index action method of PersonsController");
