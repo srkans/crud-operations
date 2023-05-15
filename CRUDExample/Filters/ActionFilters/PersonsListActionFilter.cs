@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
+using ServiceContracts.DTO;
 
 namespace CRUDExample.Filters.ActionFilters
 {
@@ -12,13 +13,43 @@ namespace CRUDExample.Filters.ActionFilters
         }
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            throw new NotImplementedException();
+            //To do : add after logic here
+            _logger.LogInformation("PersonsListActionFilter.OnActionExecuted method");
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
             //To do : add before logic here
             _logger.LogInformation("PersonsListActionFilter.OnActionExecuting method");
+
+            if (context.ActionArguments.ContainsKey("searchBy"))
+            {
+                string searchBy = Convert.ToString(context.ActionArguments["searchBy"]);
+
+                //validate searchBy parameter value
+                if (!string.IsNullOrEmpty(searchBy))
+                {
+                    var searchByOptions = new List<string>()
+                    {
+                        nameof(PersonResponse.Name),
+                        nameof(PersonResponse.Email),
+                        nameof(PersonResponse.DateOfBirth),
+                        nameof(PersonResponse.Gender),
+                        nameof(PersonResponse.CountryID),
+                        nameof(PersonResponse.Address)
+
+                    };
+                    //resetting searchBy parameter value
+                    if(searchByOptions.Any(temp => temp == searchBy) == false)
+                    {
+                        _logger.LogInformation("searchBy actual value {searchBy}", searchBy);
+
+                        context.ActionArguments["searchBy"] = nameof(PersonResponse.Name);
+
+                        _logger.LogInformation("searchBy updated value is {searchBy}", context.ActionArguments["searchBy"]);
+                    }
+                }
+            }
         }
     }
 }
