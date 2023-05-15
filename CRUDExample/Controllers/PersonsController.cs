@@ -46,14 +46,8 @@ namespace CRUDExample.Controllers
 
             List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
 
-            ViewBag.CurrentSearchBy = searchBy;
-            ViewBag.CurrentSearchString = searchString;
-
             //Sort
             List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
-
-            ViewBag.CurrentSortBy = sortBy;
-            ViewBag.CurrentSortOrder = sortOrder.ToString();
 
             return View(sortedPersons); //Views/Shared/Index.cshtml
         }
