@@ -5,6 +5,7 @@ using Services;
 using RepositoryContracts;
 using Repositories;
 using Serilog;
+using CRUDExample.Filters.ActionFilters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,12 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
                        .ReadFrom.Services(services);  
 }); //serilog'un konfigurasyon ayarlarini ve servisleri okumayabilmesi icin
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    ILogger<ResponseHeaderActionFilter> logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); //GetService->bulamazsa null atýyor.
+    //options.Filters.Add<ResponseHeaderActionFilter>();
+    options.Filters.Add(new ResponseHeaderActionFilter(logger,"My-Key-From-Global","My-Value-From-Global"));
+});
 
 //IoC services into IoC container
 builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
