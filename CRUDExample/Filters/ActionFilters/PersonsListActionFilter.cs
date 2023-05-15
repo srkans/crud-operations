@@ -43,6 +43,17 @@ namespace CRUDExample.Filters.ActionFilters
                 }
             }
 
+            //Search
+            personsController.ViewBag.SearchField = new Dictionary<string, string>()
+            {
+                { nameof(PersonResponse.Name), "Person Name" },
+                { nameof(PersonResponse.Email), "Email" },
+                { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
+                { nameof(PersonResponse.Gender), "Gender" },
+                { nameof(PersonResponse.Country), "Country" },
+                { nameof(PersonResponse.Address), "Address" }
+            };
+
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
