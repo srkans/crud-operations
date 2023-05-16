@@ -20,7 +20,7 @@ builder.Services.AddControllersWithViews(options =>
 {
     ILogger<ResponseHeaderActionFilter> logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); //GetService->bulamazsa null atýyor.
     //options.Filters.Add<ResponseHeaderActionFilter>();
-    options.Filters.Add(new ResponseHeaderActionFilter(logger,"My-Key-From-Global","My-Value-From-Global"));
+    options.Filters.Add(new ResponseHeaderActionFilter(logger,"My-Key-From-Global","My-Value-From-Global",2));
 });
 
 //IoC services into IoC container
