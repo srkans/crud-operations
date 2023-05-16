@@ -1,0 +1,56 @@
+2023-05-16 14:34:42.667 +03:00 [INF] User profile is available. Using 'C:\Users\serka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-16 14:34:42.827 +03:00 [INF] Now listening on: http://localhost:5003
+2023-05-16 14:34:43.658 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/ - -
+2023-05-16 14:34:43.805 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2023-05-16 14:34:43.826 +03:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (CRUDExample)'
+2023-05-16 14:34:43.930 +03:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (CRUDExample).
+2023-05-16 14:34:45.141 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-16 14:34:45.143 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-16 14:34:45.144 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-16 14:34:45.147 +03:00 [INF] PersonsListActionFilter.OnActionExecuting method
+2023-05-16 14:34:45.150 +03:00 [INF] Index action method of PersonsController
+2023-05-16 14:34:45.157 +03:00 [INF] GetFilteredPerson of PersonService
+2023-05-16 14:34:45.160 +03:00 [INF] GetAllPersons of PersonsRepository
+2023-05-16 14:34:46.132 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+2023-05-16 14:34:46.648 +03:00 [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[ReceiveNewsLetters], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2023-05-16 14:34:46.790 +03:00 [INF] Time for filtered persons from database completed in 1630.8 ms
+2023-05-16 14:34:46.802 +03:00 [INF] GetSortedPerson of PersonService
+2023-05-16 14:34:46.809 +03:00 [INF] PersonsListActionFilter.OnActionExecuted method
+2023-05-16 14:34:46.874 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-16 14:34:46.876 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-16 14:34:46.879 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-16 14:34:46.882 +03:00 [INF] PersonsListResultFilter.OnResultExecutionAsync before
+2023-05-16 14:34:46.888 +03:00 [INF] Executing ViewResult, running view Index.
+2023-05-16 14:34:47.095 +03:00 [INF] Executed ViewResult - view Index executed in 199.8607ms.
+2023-05-16 14:34:47.101 +03:00 [INF] PersonsListResultFilter.OnResultExecutionAsync after
+2023-05-16 14:34:47.108 +03:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (CRUDExample) in 3151.554ms
+2023-05-16 14:34:47.111 +03:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (CRUDExample)'
+2023-05-16 14:34:47.116 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Last-Modified: 16-05-2023 14:34
+my-key-from-controller: [Redacted]
+My-Key-From-Global: [Redacted]
+My-Key-FromAction: [Redacted]
+2023-05-16 14:34:47.122 +03:00 [INF] HTTP GET / responded 200 in 3398.0978 ms
+2023-05-16 14:34:47.150 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/ - - - 200 - text/html;+charset=utf-8 3508.0135ms
+2023-05-16 14:34:47.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/logo.png?v=6Peni12RrUIz3jDw9P6jYhF7ZXtxcFNb-hK5USahtqc - -
+2023-05-16 14:34:47.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - -
+2023-05-16 14:34:47.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_vs/browserLink - -
+2023-05-16 14:34:47.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/StyleSheet.css - -
+2023-05-16 14:34:47.176 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 9.1203ms
+2023-05-16 14:34:47.180 +03:00 [INF] The file /StyleSheet.css was not modified
+2023-05-16 14:34:47.181 +03:00 [INF] The file /logo.png was not modified
+2023-05-16 14:34:47.186 +03:00 [INF] HTTP GET /StyleSheet.css responded 304 in 9.9031 ms
+2023-05-16 14:34:47.189 +03:00 [INF] HTTP GET /logo.png responded 304 in 16.5215 ms
+2023-05-16 14:34:47.193 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/StyleSheet.css - - - 304 - text/css 25.0546ms
+2023-05-16 14:34:47.199 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/logo.png?v=6Peni12RrUIz3jDw9P6jYhF7ZXtxcFNb-hK5USahtqc - - - 304 - image/png 31.9925ms
+2023-05-16 14:34:47.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.8605ms

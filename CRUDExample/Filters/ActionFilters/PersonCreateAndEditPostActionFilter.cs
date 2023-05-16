@@ -36,6 +36,10 @@ namespace CRUDExample.Filters.ActionFilters
                     await next(); //model state valid ise sonraki filter ve action method'u işletmeye devam ediyoruz
                 }
             }
+            else 
+            {
+              await  next();
+            }
 
             //await next(); context.Result zaten short circuit ediyor o yüzden çağırmaya gerek yok
 
