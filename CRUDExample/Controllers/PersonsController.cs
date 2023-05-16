@@ -1,4 +1,5 @@
 ﻿using CRUDExample.Filters.ActionFilters;
+using CRUDExample.Filters.ResourceFilters;
 using CRUDExample.Filters.ResultFilters;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -63,6 +64,7 @@ namespace CRUDExample.Controllers
         [Route("[action]")]
         [HttpPost]
         [TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
+        [TypeFilter(typeof(FeatureDisabledResourceFilter), Arguments = new object[] {false})] //sonra false yapmak kolay olsun diye
         public async Task<IActionResult> Create(PersonAddRequest personRequest)
         {
             PersonResponse personResponse = await _personsService.AddPerson(personRequest);
