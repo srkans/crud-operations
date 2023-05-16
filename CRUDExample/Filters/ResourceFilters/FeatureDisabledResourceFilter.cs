@@ -22,7 +22,9 @@ namespace CRUDExample.Filters.ResourceFilters
 
             if(_isDisabled)
             {
-               context.Result = new NotFoundResult(); //404 not found
+               //context.Result = new NotFoundResult(); //404 not found -- kalıcı olarak kaldırıldı
+
+               context.Result = new StatusCodeResult(501); //not implemented -- gelecekte çalışacak henüz bitmedi
             }
             else
             {

@@ -66,8 +66,8 @@ namespace Repositories
 
             matchingPerson.Name = person.Name;
             matchingPerson.Email = person.Email;
-            matchingPerson.Gender = person.Email;
             matchingPerson.DateOfBirth = person.DateOfBirth;
+            matchingPerson.Gender = person.Gender;
             matchingPerson.CountryID = person.CountryID;
             matchingPerson.Address = person.Address;
             matchingPerson.ReceiveNewsLetters = person.ReceiveNewsLetters;
