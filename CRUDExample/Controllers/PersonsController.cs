@@ -60,7 +60,7 @@ namespace CRUDExample.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<IActionResult> Create(PersonAddRequest personAddRequest)
+        public async Task<IActionResult> Create(PersonAddRequest personRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -69,10 +69,10 @@ namespace CRUDExample.Controllers
                 new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() }
                 );
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                return View(personAddRequest);
+                return View(personRequest);
             }
 
-            PersonResponse personResponse = await _personsService.AddPerson(personAddRequest);
+            PersonResponse personResponse = await _personsService.AddPerson(personRequest);
 
             return RedirectToAction("Index", "Persons");
         }
@@ -100,9 +100,9 @@ namespace CRUDExample.Controllers
 
         [HttpPost]
         [Route("[action]/{personID}")] // ~/persons/edit/1
-        public async Task<IActionResult> Edit(PersonUpdateRequest personUpdateRequest)
+        public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateRequest.PersonID);
+            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
 
             if (personResponse == null)
             {
@@ -111,7 +111,7 @@ namespace CRUDExample.Controllers
 
             if (ModelState.IsValid)
             {
-                PersonResponse updatedPerson = await _personsService.UpdatePerson(personUpdateRequest);
+                PersonResponse updatedPerson = await _personsService.UpdatePerson(personRequest);
                 return RedirectToAction("Index");
             }
             else
