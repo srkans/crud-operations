@@ -10,7 +10,7 @@ using ServiceContracts.Enums;
 namespace CRUDExample.Controllers
 {
     [Route("[controller]")]
-    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key-from-controller", "my-value-from-controller" })]
+    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key-from-controller", "my-value-from-controller",3 },Order = 3)]
     public class PersonsController : Controller
     {
 
@@ -23,13 +23,12 @@ namespace CRUDExample.Controllers
             _personsService = personsService;
             _countriesService = countriesService;
             _logger = logger;
-
         }
 
         [Route("[action]")]
         [Route("/")]
-        [TypeFilter(typeof(PersonsListActionFilter))]
-        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] {"X-Custom-Key","Custom-Value"})]
+        [TypeFilter(typeof(PersonsListActionFilter),Order =4)]
+        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] {"My-Key-FromAction", "My-Value-FromAction", 1},Order = 1)]
         public async Task<IActionResult> Index(string searchBy, string? searchString = "", string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             _logger.LogInformation("Index action method of PersonsController");
@@ -47,7 +46,6 @@ namespace CRUDExample.Controllers
         //Executes when the user clicks on "Create Person" hyperlink
         [Route("[action]")]
         [HttpGet]
-        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key-from-action", "my-value-from-action" })]
         public async Task<IActionResult> Create()
         {
             List<CountryResponse> countries = await _countriesService.GetAllCountries();
