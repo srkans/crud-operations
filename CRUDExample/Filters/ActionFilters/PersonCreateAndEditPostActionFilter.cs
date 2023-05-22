@@ -9,10 +9,12 @@ namespace CRUDExample.Filters.ActionFilters
     public class PersonCreateAndEditPostActionFilter : IAsyncActionFilter
     {
         private readonly ICountriesService _countriesService;
+        private readonly ILogger<PersonCreateAndEditPostActionFilter> _logger;
 
-        public PersonCreateAndEditPostActionFilter(ICountriesService countriesService)
+        public PersonCreateAndEditPostActionFilter(ICountriesService countriesService, ILogger<PersonCreateAndEditPostActionFilter> logger)
         {
             _countriesService = countriesService;
+            _logger = logger;
         }
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
@@ -44,7 +46,7 @@ namespace CRUDExample.Filters.ActionFilters
             //await next(); context.Result zaten short circuit ediyor o yüzden çağırmaya gerek yok
 
             //after logic
-
+            _logger.LogInformation("In after logic of PersonCreateAndEdit Action Filter");
         }
     }
 }
