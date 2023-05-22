@@ -1,3 +1,0 @@
-2023-05-16 15:56:32.424 +03:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-05-16 15:56:32.437 +03:00 [INF] Hosting environment: Development
-2023-05-16 15:56:32.454 +03:00 [INF] Content root path: F:\Documents\xunit\CRUDExample\

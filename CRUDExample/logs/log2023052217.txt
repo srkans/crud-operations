@@ -1,0 +1,47 @@
+2023-05-22 17:00:20.945 +03:00 [INF] User profile is available. Using 'C:\Users\serka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-22 17:00:21.090 +03:00 [INF] Now listening on: http://localhost:5003
+2023-05-22 17:00:21.598 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/Persons/Index - -
+2023-05-22 17:00:21.678 +03:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Persons/Index
+2023-05-22 17:00:21.693 +03:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (CRUDExample)'
+2023-05-22 17:00:21.753 +03:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (CRUDExample).
+2023-05-22 17:00:21.948 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-22 17:00:21.950 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-22 17:00:21.953 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync before-method
+2023-05-22 17:00:21.955 +03:00 [INF] PersonsListActionFilter.OnActionExecuting method
+2023-05-22 17:00:21.959 +03:00 [INF] Index action method of PersonsController
+2023-05-22 17:00:21.965 +03:00 [INF] GetFilteredPerson of PersonService
+2023-05-22 17:00:21.968 +03:00 [INF] GetAllPersons of PersonsRepository
+2023-05-22 17:00:23.359 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+2023-05-22 17:00:23.980 +03:00 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[Name], [p].[ReceiveNewsLetters], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2023-05-22 17:00:24.097 +03:00 [INF] Time for filtered persons from database completed in 2128.5 ms
+2023-05-22 17:00:24.113 +03:00 [INF] GetSortedPerson of PersonService
+2023-05-22 17:00:24.120 +03:00 [INF] PersonsListActionFilter.OnActionExecuted method
+2023-05-22 17:00:24.183 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-22 17:00:24.198 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-22 17:00:24.201 +03:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync after-method
+2023-05-22 17:00:24.208 +03:00 [INF] PersonsListResultFilter.OnResultExecutionAsync before
+2023-05-22 17:00:24.219 +03:00 [INF] Executing ViewResult, running view Index.
+2023-05-22 17:00:24.517 +03:00 [INF] Executed ViewResult - view Index executed in 299.4803ms.
+2023-05-22 17:00:24.521 +03:00 [INF] PersonsListResultFilter.OnResultExecutionAsync after
+2023-05-22 17:00:24.525 +03:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (CRUDExample) in 2759.5069ms
+2023-05-22 17:00:24.527 +03:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (CRUDExample)'
+2023-05-22 17:00:24.531 +03:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Last-Modified: 22-05-2023 17:00
+My-Key-From-Global: [Redacted]
+My-Key-FromAction: [Redacted]
+2023-05-22 17:00:24.535 +03:00 [INF] HTTP GET /Persons/Index responded 200 in 2900.7948 ms
+2023-05-22 17:00:24.561 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/Persons/Index - - - 200 - text/html;+charset=utf-8 2968.2748ms
+2023-05-22 17:00:24.573 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_vs/browserLink - -
+2023-05-22 17:00:24.581 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - -
+2023-05-22 17:00:24.587 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 5.4446ms
+2023-05-22 17:00:24.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5003/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.2974ms
