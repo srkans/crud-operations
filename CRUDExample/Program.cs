@@ -16,11 +16,13 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
                        .ReadFrom.Services(services);  
 }); //serilog'un konfigurasyon ayarlarini ve servisleri okumayabilmesi icin
 
+builder.Services.AddTransient<ResponseHeaderActionFilter>();
+
 builder.Services.AddControllersWithViews(options =>
 {
     ILogger<ResponseHeaderActionFilter> logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); //GetService->bulamazsa null atýyor.
     //options.Filters.Add<ResponseHeaderActionFilter>();
-    options.Filters.Add(new ResponseHeaderActionFilter(logger,"My-Key-From-Global","My-Value-From-Global",2));
+    options.Filters.Add(new ResponseHeaderActionFilter(logger) {Key = "My-Key-From-Global", Value = "My-Value-From-Global",Order = 2 });
 });
 
 //IoC services into IoC container

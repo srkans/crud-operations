@@ -1,4 +1,5 @@
-﻿using CRUDExample.Filters.ActionFilters;
+﻿using CRUDExample.Filters;
+using CRUDExample.Filters.ActionFilters;
 using CRUDExample.Filters.AuthorizationFilters;
 using CRUDExample.Filters.ExceptionFilters;
 using CRUDExample.Filters.ResourceFilters;
@@ -14,8 +15,10 @@ using ServiceContracts.Enums;
 namespace CRUDExample.Controllers
 {
     [Route("[controller]")]
-    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key-from-controller", "my-value-from-controller",3 },Order = 3)]
+    // [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key-from-controller", "my-value-from-controller",3 },Order = 3)]
+    [ResponseHeaderFilterFactory("My-Key-FromAction", "My-Value-FromAction", 3)]
     [TypeFilter(typeof(HandleExceptionFilter))]
+    [TypeFilter(typeof(PersonsAlwaysRunResultFilter))]
     public class PersonsController : Controller
     {
 
@@ -33,8 +36,9 @@ namespace CRUDExample.Controllers
         [Route("[action]")]
         [Route("/")]
         [TypeFilter(typeof(PersonsListActionFilter),Order =4)]
-        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] {"My-Key-FromAction", "My-Value-FromAction", 1},Order = 1)]
+        [ResponseHeaderFilterFactory("My-Key-FromAction", "My-Value-FromAction", 1)]
         [TypeFilter(typeof(PersonsListResultFilter))]
+        [SkipFilter]
         public async Task<IActionResult> Index(string searchBy, string? searchString = "", string sortBy = nameof(PersonResponse.Name), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             _logger.LogInformation("Index action method of PersonsController");
