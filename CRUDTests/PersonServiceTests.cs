@@ -1,4 +1,6 @@
 ﻿
+
+using Microsoft.Extensions.Logging;
 using Moq;
 using System.Linq.Expressions;
 
@@ -7,7 +9,11 @@ namespace CRUDTests
     public class PersonServiceTests
     {
         private readonly IPersonsService _personService;
+        private readonly ILogger<PersonsService> _logger;
+
         private readonly Mock<IPersonsRepository> _personRepositoryMock;
+        private readonly Mock<ILogger<PersonsService>> _loggerMock;
+
         private readonly IPersonsRepository _personsRepository;
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly IFixture _fixture;
@@ -17,7 +23,11 @@ namespace CRUDTests
             _fixture = new Fixture();
             _personRepositoryMock = new Mock<IPersonsRepository>();
             _personsRepository = _personRepositoryMock.Object;
-            _personService = new PersonsService(_personsRepository,null,null);
+
+            _loggerMock = new Mock<ILogger<PersonsService>>();
+            _logger = _loggerMock.Object;
+
+            _personService = new PersonsService(_personsRepository,_logger,null);
 
             _testOutputHelper = testOutputHelper;
         }
