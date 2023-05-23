@@ -1,5 +1,6 @@
 ﻿using CRUDExample.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CRUDTests
 {
@@ -7,9 +8,11 @@ namespace CRUDTests
     {
         private readonly IPersonsService _personsService;
         private readonly ICountriesService _countriesService;
+        private readonly ILogger<PersonsController> _logger;
 
         private readonly Mock<IPersonsService> _personsServiceMock;
         private readonly Mock<ICountriesService> _countriesServiceMock;
+        private readonly Mock<ILogger<PersonsController>> _loggerMock;
 
         private readonly IFixture _fixture;
 
@@ -19,9 +22,11 @@ namespace CRUDTests
 
             _countriesServiceMock = new Mock<ICountriesService>();
             _personsServiceMock = new Mock<IPersonsService>();
+            _loggerMock = new Mock<ILogger<PersonsController>>();
 
             _countriesService = _countriesServiceMock.Object;
             _personsService = _personsServiceMock.Object;
+            _logger = _loggerMock.Object;
         }
 
         #region Index
@@ -32,7 +37,7 @@ namespace CRUDTests
             //Arrange
             List<PersonResponse> personResponseList = _fixture.Create<List<PersonResponse>>();
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService,null);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService,_logger);
 
             _personsServiceMock.Setup(temp => temp.GetFilteredPersons(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(personResponseList);
 
