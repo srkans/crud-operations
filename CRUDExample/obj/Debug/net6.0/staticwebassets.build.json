@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tKRjRoVQlu11duyQDGgDjQacs1uOzXAcb1HQ6G+NJHQ=",
+  "Hash": "2CY0XafMb/rRDBB6kPAL8j9ysbE8qKRGVPMPmX3pCCQ=",
   "Source": "CRUDExample",
   "BasePath": "_content/CRUDExample",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\error.svg",
+      "SourceId": "CRUDExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\",
+      "BasePath": "_content/CRUDExample",
+      "RelativePath": "error.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\error.svg"
+    },
     {
       "Identity": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\jquery.min.js",
       "SourceId": "CRUDExample",

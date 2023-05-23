@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Serilog;
 using System.Threading.Tasks;
 
+
 namespace CRUDExample.Middleware
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
@@ -35,8 +36,10 @@ namespace CRUDExample.Middleware
                 {
                     _logger.LogError("{ExceptionType} {ExceptionMessage}", ex.GetType().ToString(), ex.Message);
                 }
-                httpContext.Response.StatusCode = 500;
-                await httpContext.Response.WriteAsync("Error Occured");
+                //httpContext.Response.StatusCode = 500;
+                //await httpContext.Response.WriteAsync("Error Occured");
+
+                throw; //burada fırlatılan hata UseExceptionHandler tarafından yakalanılacak
             }
 
         }

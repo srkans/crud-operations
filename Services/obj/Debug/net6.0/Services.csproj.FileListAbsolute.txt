@@ -17,3 +17,5 @@ F:\Documents\xunit\Services\obj\Debug\net6.0\Services.pdb
 F:\Documents\xunit\Services\obj\Debug\net6.0\ref\Services.dll
 F:\Documents\xunit\Services\bin\Debug\net6.0\RepositoryContracts.dll
 F:\Documents\xunit\Services\bin\Debug\net6.0\RepositoryContracts.pdb
+F:\Documents\xunit\Services\bin\Debug\net6.0\Exceptions.dll
+F:\Documents\xunit\Services\bin\Debug\net6.0\Exceptions.pdb

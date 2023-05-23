@@ -487,3 +487,5 @@ F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
 F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\SerilogTimings.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Exceptions.dll
+F:\Documents\xunit\CRUDTests\bin\Debug\net6.0\Exceptions.pdb
