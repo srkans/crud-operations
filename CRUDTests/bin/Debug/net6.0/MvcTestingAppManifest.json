@@ -1,9 +1,9 @@
 {
-  "CRUDExample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\CRUDExample",
-  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\Entities",
-  "Exceptions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\Exceptions",
-  "Repositories, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\Repositories",
-  "RepositoryContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\RepositoryContracts",
-  "ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\ServiceContracts",
-  "Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\xunit\\Services"
+  "CRUDExample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\CRUDExample",
+  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\Entities",
+  "Exceptions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\Exceptions",
+  "Repositories, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\Repositories",
+  "RepositoryContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\RepositoryContracts",
+  "ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\ServiceContracts",
+  "Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "F:\\Documents\\crud-operations\\Services"
 }
