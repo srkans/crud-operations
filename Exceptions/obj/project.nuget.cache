@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/uQWRM1+l6Ygwlfl8whJToN7w/8QhMJNzTrl4c3cthPvt840HmrJciRBBd27ZOQmH8EPSgYnjxWTYYJKWHbZ7g==",
+  "dgSpecHash": "f3hvqXnIBkT5rV81eHhxGGCD62nAYejfhSKdzWz90IlOY0wI9DhAN1cxHhwQigtGDHhfq+uzXY1VYgawo0tr6g==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj",
+  "projectFilePath": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

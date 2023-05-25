@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj": {}
+    "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj": {}
   },
   "projects": {
-    "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj": {
+    "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj",
         "projectName": "Exceptions",
-        "projectPath": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\Exceptions\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\Exceptions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",

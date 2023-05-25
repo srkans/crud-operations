@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/eKbD6A7tTozYv2cueisij2MMrue9QSKendJgy73iFk1QTXwjrHKKdBZ9RHiKxZ7cwCrxhoyfYgjzYiDa8uqRA==",
+  "dgSpecHash": "2FCwTg+eqzODft04TUQZ/9ihfCMaMADtiKiBdTCdgXuUYmdoXjaTAf7M9osIgmKyXd6sZ7Es1P1XliprjKEWvw==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj",
+  "projectFilePath": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

@@ -22,16 +22,27 @@ namespace CRUDExample.Controllers
     public class PersonsController : Controller
     {
 
-        private readonly IPersonsService _personsService;
-        private readonly ICountriesService _countriesService;
+        private readonly IPersonsGetterService _personsGetterService;
+        private readonly IPersonsAdderService _personsAdderService;
+        private readonly IPersonsSorterService _personsSorterService;
+        private readonly IPersonsDeleterService _personsDeleterService;
+        private readonly IPersonsUpdaterService _personsUpdaterService;
+
+        private readonly ICountriesGetterService _countriesGetterService;
         private readonly ILogger<PersonsController> _logger;
 
-        public PersonsController(IPersonsService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
+        public PersonsController(IPersonsGetterService personsGetterService, IPersonsAdderService personsAdderService, IPersonsDeleterService personsDeleterService, IPersonsUpdaterService personsUpdaterService, IPersonsSorterService personsSorterService, ICountriesGetterService countriesService, ILogger<PersonsController> logger)
         {
-            _personsService = personsService;
-            _countriesService = countriesService;
+            _personsGetterService = personsGetterService;
+            _personsAdderService = personsAdderService;
+            _personsUpdaterService = personsUpdaterService;
+            _personsDeleterService = personsDeleterService;
+            _personsSorterService = personsSorterService;
+
+            _countriesGetterService = countriesService;
             _logger = logger;
         }
+
 
         [Route("[action]")]
         [Route("/")]
@@ -45,10 +56,10 @@ namespace CRUDExample.Controllers
 
             _logger.LogDebug($"searchBy:{searchBy}, searchString:{searchString}, sortBy:{sortBy}, sortOrder:{sortOrder}");
 
-            List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
+            List<PersonResponse> persons = await _personsGetterService.GetFilteredPersons(searchBy, searchString);
 
             //Sort
-            List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
+            List<PersonResponse> sortedPersons = await _personsSorterService.GetSortedPersons(persons, sortBy, sortOrder);
 
             return View(sortedPersons); //Views/Shared/Index.cshtml
         }
@@ -58,7 +69,7 @@ namespace CRUDExample.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            List<CountryResponse> countries = await _countriesService.GetAllCountries();
+            List<CountryResponse> countries = await _countriesGetterService.GetAllCountries();
             ViewBag.Countries = countries.Select(temp =>
             new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() }
             );
@@ -74,7 +85,7 @@ namespace CRUDExample.Controllers
         [TypeFilter(typeof(FeatureDisabledResourceFilter), Arguments = new object[] {false})] //sonra false yapmak kolay olsun diye
         public async Task<IActionResult> Create(PersonAddRequest personRequest)
         {
-            PersonResponse personResponse = await _personsService.AddPerson(personRequest);
+            PersonResponse personResponse = await _personsAdderService.AddPerson(personRequest);
 
             return RedirectToAction("Index", "Persons");
         }
@@ -84,7 +95,7 @@ namespace CRUDExample.Controllers
         [TypeFilter(typeof(TokenResultFilter))]
         public async Task<IActionResult> Edit(Guid personID)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personID);
 
             if (personResponse == null)
             {
@@ -93,7 +104,7 @@ namespace CRUDExample.Controllers
 
             PersonUpdateRequest personUpdateRequest = personResponse.ToPersonUpdateRequest();
 
-            List<CountryResponse> countries = await _countriesService.GetAllCountries();
+            List<CountryResponse> countries = await _countriesGetterService.GetAllCountries();
             ViewBag.Countries = countries.Select(temp =>
             new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() }
             );
@@ -107,14 +118,14 @@ namespace CRUDExample.Controllers
         [TypeFilter(typeof(TokenAuthorizationFilter))]
         public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personRequest.PersonID);
 
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
 
-            PersonResponse updatedPerson = await _personsService.UpdatePerson(personRequest);
+            PersonResponse updatedPerson = await _personsUpdaterService.UpdatePerson(personRequest);
 
             return RedirectToAction("Index");
         }
@@ -123,7 +134,7 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         public async Task<IActionResult> Delete(Guid personID)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personID);
 
             if (personResponse == null)
             {
@@ -137,14 +148,14 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")] // ~/persons/delete/1
         public async Task<IActionResult> Delete(PersonUpdateRequest personUpdateResult)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateResult.PersonID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personUpdateResult.PersonID);
 
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
 
-            await _personsService.DeletePerson(personResponse.PersonID);
+            await _personsDeleterService.DeletePerson(personResponse.PersonID);
 
             return RedirectToAction("Index");
 
@@ -153,7 +164,7 @@ namespace CRUDExample.Controllers
         [Route("[action]")]
         public async Task<IActionResult> PersonsPDF()
         {
-            List<PersonResponse> persons = await _personsService.GetAllPersons();
+            List<PersonResponse> persons = await _personsGetterService.GetAllPersons();
 
             return new ViewAsPdf("PersonsPDF", persons, ViewData)
             {
@@ -165,14 +176,14 @@ namespace CRUDExample.Controllers
         [Route("[action]")]
         public async Task<IActionResult> PersonsCSV()
         {
-           MemoryStream memoryStream = await _personsService.GetPersonsCSV();
+           MemoryStream memoryStream = await _personsGetterService.GetPersonsCSV();
             return File(memoryStream, "app/octet-stream", "persons.csv");
         }
 
         [Route("[action]")]
         public async Task<IActionResult> PersonsExcel()
         {
-            MemoryStream memoryStream = await _personsService.GetPersonsExcel();
+            MemoryStream memoryStream = await _personsGetterService.GetPersonsExcel();
             return File(memoryStream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "persons.xlsx"); //excel mime type
         }
     }

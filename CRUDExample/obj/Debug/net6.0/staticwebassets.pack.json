@@ -1,31 +1,31 @@
 {
   "Files": [
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\StyleSheet.css",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\error.svg",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\error.svg",
       "PackagePath": "staticwebassets\\error.svg"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\jquery.min.js",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\jquery.min.js",
       "PackagePath": "staticwebassets\\jquery.min.js"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\jquery.validate.min.js",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\jquery.validate.min.js"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\jquery.validate.unobtrusive.min.js",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "F:\\Documents\\xunit\\CRUDExample\\wwwroot\\logo.png",
+      "Id": "F:\\Documents\\crud-operations\\CRUDExample\\wwwroot\\logo.png",
       "PackagePath": "staticwebassets\\logo.png"
     },
     {

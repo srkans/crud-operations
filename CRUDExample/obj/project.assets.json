@@ -11142,11 +11142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\xunit\\CRUDExample\\CRUDExample.csproj",
+      "projectUniqueName": "F:\\Documents\\crud-operations\\CRUDExample\\CRUDExample.csproj",
       "projectName": "CRUDExample",
-      "projectPath": "F:\\Documents\\xunit\\CRUDExample\\CRUDExample.csproj",
+      "projectPath": "F:\\Documents\\crud-operations\\CRUDExample\\CRUDExample.csproj",
       "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\xunit\\CRUDExample\\obj\\",
+      "outputPath": "F:\\Documents\\crud-operations\\CRUDExample\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11163,23 +11163,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj"
+            "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj"
             },
-            "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj"
+            "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj"
             },
-            "F:\\Documents\\xunit\\Repositories\\Repositories.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Repositories\\Repositories.csproj"
+            "F:\\Documents\\crud-operations\\Repositories\\Repositories.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Repositories\\Repositories.csproj"
             },
-            "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj"
+            "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj"
             },
-            "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj"
+            "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj"
             },
-            "F:\\Documents\\xunit\\Services\\Services.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Services\\Services.csproj"
+            "F:\\Documents\\crud-operations\\Services\\Services.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Services\\Services.csproj"
             }
           }
         }

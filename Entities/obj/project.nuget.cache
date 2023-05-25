@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eIpVWPdiFC6tX4yNlZ5yJOij7+iS9Vd8uOjwp3foa69OgADseavb+P9jLSf8ij9tEAQd5+m7g/PCJXmbVMjGAA==",
+  "dgSpecHash": "yKD+d+w/kRjG71Na4E+rthApH7vYToo/N4Vlbp7TVC74VlE+I1n/qhne0Z2lvDnpacnmKzExBYYScqVsflCBWA==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\xunit\\Entities\\Entities.csproj",
+  "projectFilePath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

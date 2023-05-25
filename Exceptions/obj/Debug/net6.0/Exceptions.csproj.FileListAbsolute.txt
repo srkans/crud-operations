@@ -10,3 +10,15 @@ F:\Documents\xunit\Exceptions\obj\Debug\net6.0\Exceptions.dll
 F:\Documents\xunit\Exceptions\obj\Debug\net6.0\refint\Exceptions.dll
 F:\Documents\xunit\Exceptions\obj\Debug\net6.0\Exceptions.pdb
 F:\Documents\xunit\Exceptions\obj\Debug\net6.0\ref\Exceptions.dll
+F:\Documents\crud-operations\Exceptions\bin\Debug\net6.0\Exceptions.deps.json
+F:\Documents\crud-operations\Exceptions\bin\Debug\net6.0\Exceptions.dll
+F:\Documents\crud-operations\Exceptions\bin\Debug\net6.0\Exceptions.pdb
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.csproj.AssemblyReference.cache
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.AssemblyInfoInputs.cache
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.AssemblyInfo.cs
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.csproj.CoreCompileInputs.cache
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.dll
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\refint\Exceptions.dll
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\Exceptions.pdb
+F:\Documents\crud-operations\Exceptions\obj\Debug\net6.0\ref\Exceptions.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Documents\\xunit\\Services\\Services.csproj": {}
+    "F:\\Documents\\crud-operations\\Services\\Services.csproj": {}
   },
   "projects": {
-    "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
+    "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\Entities\\Entities.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\Entities\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,14 +71,14 @@
         }
       }
     },
-    "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj": {
+    "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj",
         "projectName": "Exceptions",
-        "projectPath": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\Exceptions\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\Exceptions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -126,14 +126,14 @@
         }
       }
     },
-    "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj": {
+    "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj",
         "projectName": "RepositoryContracts",
-        "projectPath": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\RepositoryContracts\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -150,8 +150,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
-                "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj"
+              "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
+                "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj"
               }
             }
           }
@@ -185,14 +185,14 @@
         }
       }
     },
-    "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj": {
+    "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj",
         "projectName": "ServiceContracts",
-        "projectPath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\ServiceContracts\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\ServiceContracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -209,8 +209,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
-                "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj"
+              "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
+                "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj"
               }
             }
           }
@@ -250,14 +250,14 @@
         }
       }
     },
-    "F:\\Documents\\xunit\\Services\\Services.csproj": {
+    "F:\\Documents\\crud-operations\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documents\\xunit\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Documents\\crud-operations\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "F:\\Documents\\xunit\\Services\\Services.csproj",
+        "projectPath": "F:\\Documents\\crud-operations\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-        "outputPath": "F:\\Documents\\xunit\\Services\\obj\\",
+        "outputPath": "F:\\Documents\\crud-operations\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -274,14 +274,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj": {
-                "projectPath": "F:\\Documents\\xunit\\Exceptions\\Exceptions.csproj"
+              "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj": {
+                "projectPath": "F:\\Documents\\crud-operations\\Exceptions\\Exceptions.csproj"
               },
-              "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj": {
-                "projectPath": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj"
+              "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj": {
+                "projectPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj"
               },
-              "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj": {
-                "projectPath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj"
+              "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj"
               }
             }
           }

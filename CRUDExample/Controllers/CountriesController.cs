@@ -6,12 +6,15 @@ namespace CRUDExample.Controllers
     [Route("[controller]")]
     public class CountriesController : Controller
     {
-        private readonly ICountriesService _countriesService;
+        private readonly ICountriesGetterService _countriesGetterService;
+        private readonly ICountriesUploaderService _countriesUploaderService;
 
-        public CountriesController(ICountriesService countriesService)
+        public CountriesController(ICountriesGetterService countriesGetterService, ICountriesUploaderService countriesUploaderService)
         {
-            _countriesService = countriesService;
+            _countriesGetterService = countriesGetterService;
+            _countriesUploaderService = countriesUploaderService;
         }
+
 
         [Route("UploadFromExcel")]
         public IActionResult UploadFromExcel()
@@ -19,9 +22,10 @@ namespace CRUDExample.Controllers
             return View();
         }
 
+
         [HttpPost]
         [Route("UploadFromExcel")]
-        public async Task<IActionResult> UploadFromExcel(IFormFile excelFile) //multipart/form-data for IFormFile
+        public async Task<IActionResult> UploadFromExcel(IFormFile excelFile)
         {
             if (excelFile == null || excelFile.Length == 0)
             {
@@ -29,13 +33,14 @@ namespace CRUDExample.Controllers
                 return View();
             }
 
-            if(!Path.GetExtension(excelFile.FileName).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+            if (!Path.GetExtension(excelFile.FileName).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
             {
                 ViewBag.ErrorMessage = "Unsupported file. 'xlsx' file is expected";
                 return View();
             }
 
-            int countriesCountInserted = await _countriesService.UploadCountriesFromExcelFile(excelFile);
+            int countriesCountInserted = await _countriesUploaderService.UploadCountriesFromExcelFile(excelFile);
+
             ViewBag.Message = $"{countriesCountInserted} Countries Uploaded";
             return View();
         }

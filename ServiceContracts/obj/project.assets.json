@@ -2178,11 +2178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj",
+      "projectUniqueName": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj",
       "projectName": "ServiceContracts",
-      "projectPath": "F:\\Documents\\xunit\\ServiceContracts\\ServiceContracts.csproj",
+      "projectPath": "F:\\Documents\\crud-operations\\ServiceContracts\\ServiceContracts.csproj",
       "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\xunit\\ServiceContracts\\obj\\",
+      "outputPath": "F:\\Documents\\crud-operations\\ServiceContracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2199,8 +2199,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj"
+            "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj"
             }
           }
         }

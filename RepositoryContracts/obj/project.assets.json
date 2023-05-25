@@ -1929,11 +1929,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj",
+      "projectUniqueName": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj",
       "projectName": "RepositoryContracts",
-      "projectPath": "F:\\Documents\\xunit\\RepositoryContracts\\RepositoryContracts.csproj",
+      "projectPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\RepositoryContracts.csproj",
       "packagesPath": "C:\\Users\\serka\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\xunit\\RepositoryContracts\\obj\\",
+      "outputPath": "F:\\Documents\\crud-operations\\RepositoryContracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\serka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1950,8 +1950,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Documents\\xunit\\Entities\\Entities.csproj": {
-              "projectPath": "F:\\Documents\\xunit\\Entities\\Entities.csproj"
+            "F:\\Documents\\crud-operations\\Entities\\Entities.csproj": {
+              "projectPath": "F:\\Documents\\crud-operations\\Entities\\Entities.csproj"
             }
           }
         }

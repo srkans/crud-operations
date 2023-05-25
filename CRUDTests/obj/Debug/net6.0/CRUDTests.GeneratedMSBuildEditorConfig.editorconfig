@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CRUDTests
-build_property.ProjectDir = F:\Documents\xunit\CRUDTests\
+build_property.ProjectDir = F:\Documents\crud-operations\CRUDTests\

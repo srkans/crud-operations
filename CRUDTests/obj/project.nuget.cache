@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "erjo+Gw9n4PrfoEkao2cWDUzywZxCq9Seue5IJDSZZ8NEWmsewJIyKvxb+NcV/rVnO+EFt9GRp2zsn07oPNpuA==",
+  "dgSpecHash": "WyRK6a3/8WpSdeDOrYpSSA9Kg7VznrtoLHUjnHY9zB08ICyYg/l/gBd5NNxoYjjN3qXRbgKY0l9OiVU7zP+LTw==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\xunit\\CRUDTests\\CRUDTests.csproj",
+  "projectFilePath": "F:\\Documents\\crud-operations\\CRUDTests\\CRUDTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serka\\.nuget\\packages\\autofixture\\4.17.0\\autofixture.4.17.0.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",

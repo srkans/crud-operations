@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xuu/b/OPUiIjA/FVW1dDTfE4JKS8niLkbilVn0wIKz05HxWxl8pxurWTA0OZZHNB/pWxOn1fHGsCtuH+1nSQHA==",
+  "dgSpecHash": "63NzhBTC2MdU+3JocQrzdp6Q2H3ng7e0p9OWPkknpZ74ygMBexr+71rTYbJqxFcp1gt5FKgrv90qq7pjO7Ivyg==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\xunit\\CRUDExample\\CRUDExample.csproj",
+  "projectFilePath": "F:\\Documents\\crud-operations\\CRUDExample\\CRUDExample.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serka\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\serka\\.nuget\\packages\\epplus\\6.0.6\\epplus.6.0.6.nupkg.sha512",
